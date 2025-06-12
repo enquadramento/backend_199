@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conheça a Bacia</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #3a595c !important;
+        }
+      
+        .container1 {
+            display: flex;
+            height: 100vh;
+            background-color: #3a595c !important;
+        }
+    
+        .textos {
+            width: 65%;
+            background-color: #3a595c;
+        }
+
+        .mapa {
+            width: 35%;
+            background-color: #3a595c !important;
+            display: 100%;
+            
+        }        
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }     
+        
+        #bacia-info {
+            font-family: 'League Spartan',sans-serif; /*tipo */
+            font-size:60px; /*tamanho */
+            font-weight: bold; /*negrito*/
+            letter-spacing: 6px; /* espaço entre letras*/ 
+            padding-left: 10%; /* espaço entre a caixa da div e o texto a esquerda*/
+            padding-right: 10%;
+            margin-top: 15px;
+            margin-bottom: 6px; /* espaço abaixo do título-estudo*/
+            text-transform: uppercase; /* maiúsculo */
+            color: white; /* cor da fonte */
+
+        }
+        
+        #desc-info {
+        font-family: 'Nunito', sans-serif;
+        font-size: 20px;
+        initial-letter: 6px;
+        padding-left: 10%;
+        padding-right: 15%;
+        margin-top: 15px;
+        color: #C0DCD7 !important;
+        overflow-wrap: break-word; /*quebra de texto em palavras longas*/
+        word-wrap: break-word; /* quebra de texto se necessário*/
+        white-space: normal; /* permite que o texto quebre*/
+        min-height: 250px;
+        }
+
+        #rio-info, #area-info h1 {
+        font-family: 'Nunito', sans-serif;
+        font-size: 30px;
+        initial-letter: 6px;
+        padding-left: 10%;
+        padding-right: 15%;
+        margin-top: 15px;
+        color: #C0DCD7 !important;
+        overflow-wrap: break-word; /*quebra de texto em palavras longas*/
+        word-wrap: break-word; /* quebra de texto se necessário*/
+        white-space: normal; /* permite que o texto quebre*/
+        min-height: 50px;
+        }
+
+        #rio-info, #area-info p {
+        font-family: 'Nunito', sans-serif;
+        font-size: 15px;
+        initial-letter: 6px;
+        padding-left: 10%;
+        padding-right: 15%;
+        margin-top: 15px;
+        color: #C0DCD7 !important;
+        overflow-wrap: break-word; /*quebra de texto em palavras longas*/
+        word-wrap: break-word; /* quebra de texto se necessário*/
+        white-space: normal; /* permite que o texto quebre*/
+        min-height: 30px;
+        }
+
+        #diagrama p {
+        font-family: 'Nunito', sans-serif;
+        font-size: 15px;
+        initial-letter: 6px;
+        padding-left: 10%;
+        padding-right: 15%;
+        margin-top: 15px;
+        color: #C0DCD7 !important;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        white-space: normal;
+        min-height: 5px;
+        }
+
+        #galeria {
+            font-family: 'League Spartan',sans-serif; /*tipo */
+            font-size:60px; /*tamanho */
+            font-weight: bold; /*negrito*/
+            letter-spacing: 6px; /* espaço entre letras*/ 
+            padding-left: 5%; /* espaço entre a caixa da div e o texto a esquerda*/
+            padding-right: 0%;
+            margin-top: 60px;
+            margin-bottom: 6px; /* espaço abaixo do título-estudo*/
+            text-transform: uppercase; /* maiúsculo */
+            color: white; /* cor da fonte */
+            background-color: rgb(71, 81, 77);
+        }
+
+        .container4_pt2 {
+            display: flex;
+            width: 100%;
+            background-color: #3a595c !important;
+            
+        }
+
+        .galeria-imagem {
+        width: 33%;
+        height: 350px;
+        overflow: hidden;
+        padding: 10px;
+        }
+
+        .galeria-imagem img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+        }
+
+        .galeria-imagem:hover img {
+        transform: scale(1.1); /* Zoom suave */
+        }
+
+        .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        }
+
+        .popup-conteudo {
+        background: #202726;
+        padding: 20px;
+        max-width: 800px;
+        width: 90%;
+        max-height: 90%;
+        overflow-y: auto;
+        border-radius: 2px;
+        }
+
+        .popup img {
+        width: 100%;
+        height: auto;
+        border-radius: 2px;
+        }
+
+        .popup-texto {
+        margin-top: 15px;
+        font-size: 16px;
+        color: #c0aeae;
+        line-height: 1.6;
+        }
+
+        .galeria-diagrama {
+        padding: 3%;
+        margin-left: 10%;
+        max-width: 1000px;
+        max-height: 200px;
+        overflow: hidden;
+        padding: 10px;  
+        }
+
+        .galeria-diagrama img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+        }
+                        
+    </style>
+</head>
+
+<body>
+    <div class="container1">
+        <div class="mapa">
+             <iframe src="03_mapa_pg_conheca.html"></iframe>
+        </div>
+
+        <div class="textos">
+            <div class="box-titulo">
+                <div id="bacia-info">
+                BACIA HIDROGRÁFICA DO RIO ANHANDUÍ
+                </div>
+            </div>
+            <div class="container2" style="display: flex;">
+                <div style="width: 10%; height: 5px;"></div>
+                <div class="barra" style="width: 70%; height: 5px; margin:10px;background-color: #e0f7fa;">  </div>
+                <div style="width: 20%; height: 5px;"></div>
+            </div>
+            <div id="desc-info">
+                considerando esses processos, a estrutura do geojson atualmente comporta um campo de "DESC",
+                além do campo de "NOME" que gostaria de atualizar uma nova div com o campo DESC assim que fosse clickada. 
+            </div>
+            
+            <div class="container3" style="display: flex;">
+                <div style="width: 10%; height: 5px;"></div>
+                <div class="barra" style="width: 70%; height: 5px; margin:10px;background-color: #e0f7fa;">  </div>
+                <div style="width: 20%; height: 5px;"></div>
+            </div>
+
+            <div id="rio-info">
+                <p>Rio Principal</p>
+                <h1>Rio Anhanduí</h1>
+            </div>
+            <div id="area-info">
+                <p>Área total da bacia:</p>
+                <h1>XXX.XXX.XXXX km²</h1>
+            </div>
+
+            <div id="diagrama"> <p> Diagrama Unifilar</p></div>
+            <div class="galeria-diagrama" onclick="abrirPopup('../data/fotos/ANHNADUI/SUB_gameleira.PNG', ' ')"> 
+                <img src="../data/fotos/ANHNADUI/SUB_gameleira.PNG" alt="Sem dados"></div>
+
+
+
+
+        </div> 
+    </div>
+    <div class="container4">
+        <div class="container4_pt1"></div>
+            <div id="galeria"> GALERIA DE FOTOS</div>
+
+        <div class="container4_pt2">  
+            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/ANHNADUI/DJI_20240813100022_0002_D.JPG', 'Esta é a explicação da Foto 1')"> 
+                <img src="../data/fotos/ANHNADUI/DJI_20240813100022_0002_D.JPG" alt="Sem dados"></div>
+            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/ANHNADUI/DJI_20240813100022_0002_D.JPG', 'Esta é a explicação da Foto 2')"> 
+                <img src="../data/fotos/ANHNADUI/DJI_20240813100022_0002_D.JPG" alt="Sem dados"></div>
+            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/ANHNADUI/DJI_20240813100022_0002_D.JPG', 'Esta é a explicação da Foto 3')"> 
+                <img src="../data/fotos/ANHNADUI/DJI_20240813100022_0002_D.JPG" alt="Sem dados"></div> 
+        </div>
+        <div class="container4_pt2">  
+            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/ANHNADUI/DJI_20240813100022_0002_D.JPG', 'Esta é a explicação da Foto 4')"> 
+                <img src="../data/fotos/ANHNADUI/DJI_20240813100022_0002_D.JPG" alt="Sem dados"></div>
+            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/ANHNADUI/DJI_20240813100022_0002_D.JPG', 'Esta é a explicação da Foto 5')"> 
+                <img src="../data/fotos/ANHNADUI/DJI_20240813100022_0002_D.JPG" alt="Sem dados"></div>
+            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/ANHNADUI/DJI_20240813100022_0002_D.JPG', 'Esta é a explicação da Foto 6')"> 
+                <img src="../data/fotos/ANHNADUI/DJI_20240813100022_0002_D.JPG" alt="Sem dados"></div> 
+        </div>
+        <div class="container4_pt2">  
+            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/ANHNADUI/DJI_20240813100022_0002_D.JPG', 'Esta é a explicação da Foto 7')"> 
+                <img src="../data/fotos/ANHNADUI/DJI_20240813100022_0002_D.JPG" alt="Sem dados"></div>
+            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/ANHNADUI/DJI_20240813100022_0002_D.JPG', 'Esta é a explicação da Foto 8')"> 
+                <img src="../data/fotos/ANHNADUI/DJI_20240813100022_0002_D.JPG" alt="Sem dados"></div>
+            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/ANHNADUI/DJI_20240813100022_0002_D.JPG', 'Esta é a explicação da Foto 9')"> 
+                <img src="../data/fotos/ANHNADUI/DJI_20240813100022_0002_D.JPG" alt="Sem dados"></div> 
+        </div>
+    </div>
+
+    <div id="popup" class="popup" onclick="fecharPopup()">
+    <div class="popup-conteudo" onclick="event.stopPropagation()">
+    <img id="popup-img" src="" alt="Imagem em destaque">
+    <div id="popup-texto" class="popup-texto"></div>
+     </div>
+</div>
+
+    <!-- popup de imagens  com click-->
+    <script>
+    function abrirPopup(imagem, texto) {
+    document.getElementById('popup-img').src = imagem;
+    document.getElementById('popup-texto').innerText = texto;
+    document.getElementById('popup').style.display = 'flex';
+    }
+
+    function fecharPopup() {
+    document.getElementById('popup').style.display = 'none';
+    }
+    </script>
+    <!-- comunicar com o mapa em iframe-->
+    <script>
+        window.addEventListener('message', function(event) {
+            if (event.data && event.data.type === 'baciaSelecionada') {
+                const nome = event.data.nome;
+                const desc = event.data.desc;
+
+                const divNome = document.getElementById('bacia-info');
+                if (divNome) {
+                    divNome.innerHTML = 'Microbacia do ' + nome;
+                }
+
+                const divDesc = document.getElementById('desc-info');
+                if (divDesc) {
+                    divDesc.innerHTML = desc;
+                }
+            }
+        });
+    </script>
+
+
+</body>
+</html>

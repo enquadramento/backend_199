@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Estudo</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet"> <!-- link da league spartan -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> <!-- link para a nunito-->
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ffffff;
+        }
+
+        .container1 {
+            display: flex;
+            height: 100vh;
+        }
+
+        .textos {
+            width: 50%;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        .mapa {
+            width: 50%;
+            background-color: #ffffff;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .titulo-estudo {
+            font-family: 'League Spartan',sans-serif; /*tipo */
+            font-size: 90px; /*tamanho */
+            letter-spacing: 6px; /* espaço entre letras*/ 
+            padding-left: 8%; /* espaço entre a caixa da div e o texto a esquerda*/
+            margin-bottom: 6px; /* espaço abaixo do título-estudo*/
+        }
+
+        .texto-explicativo {
+            font-family: 'Nunito', sans-serif;
+            font-size: 20px;
+            initial-letter: 6px;
+            padding-left: 8%;
+            padding-right: 3%;
+        }
+
+        .topicos {
+            margin: auto; /* centraliza a caixa de teto*/
+            background-color: #34495E; /*cor do fundo*/
+            color: white; /*cor do texto*/
+            border-radius: 10px; /*bordas arredondadas*/
+            width:100%;
+            padding: 4%;
+            text-align: center; /*alinhamento do texto*/
+            margin-bottom: 20px;
+            font-family: 'League Spartan',sans-serif;
+            font-size: 50px;
+           
+            
+        }
+
+        .topicos a {
+            color: inherit; /*herda o estilo do pai ".topicos" */
+            text-decoration: none; /*remove a cor mais clara ao passar o mouse*/
+        }
+        
+        .container2 {
+            display: flex;
+            height: 100vh;
+        }
+
+        .container2_pt1 {
+            width: 20%; 
+        }
+
+        .container2_pt2 {
+            width: 60%;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container1">
+
+        <div class="textos">
+            <h1 class="titulo-estudo"> ÁREA DE ESTUDO</h1>
+            <p class="texto-explicativo">Apresentamos aqui informações adicionais, curiosidades e mapas ilustrativos para maior contextualização e conhecimento da área da Bacia Hidrográfica do Rio Anhanduí</p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="container2">
+                <div class="container2_pt1"></div>
+                <div class="container2_pt2">
+                    <!-- IMPORTANTE NÃO ALTERAR AQUI NEM NA WIX -->
+                    <!-- WIX NÃO TEM O MÉTODO GET -->
+                    <!-- ENTÃO NAO VAI INSTANCIAR A PARTIR DE GET RODOLFO -->
+                    <h1 class="topicos"> <a href="https://enquadramentoanhan.wixsite.com/website/conheca-a-bacia">CONHEÇA A BACIA</a></h1>
+                    <h1 class="topicos"> <a href="https://enquadramentoanhan.wixsite.com/website/panorama-social">PANORAMA SOCIAL</a></h1>
+                    <H1 class="topicos"><a href="https://enquadramentoanhan.wixsite.com/website/manual-operativo">MANUAL OPERATIVO</a></h1>
+                </div>
+            </div>
+        
+            </div>
+        
+        <div class="mapa">
+            <iframe src="mapa.html"></iframe>
+        </div>
+
+    </div>
+    
+    </div>
+</body>
+</html>
