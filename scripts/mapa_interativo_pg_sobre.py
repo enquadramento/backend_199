@@ -1,3 +1,4 @@
+import os
 import folium
 from geopandas import read_file
 from folium.features import GeoJsonPopup
@@ -122,7 +123,12 @@ def criar_mapa():
 
 m = criar_mapa()
 
-m.save("mapa.html")
+
+caminho_saida = os.path.join(os.path.dirname(__file__), '..', 'mapa.html')
+caminho_saida = os.path.abspath(caminho_saida)
+
+m.save(caminho_saida)
+
 
 
 

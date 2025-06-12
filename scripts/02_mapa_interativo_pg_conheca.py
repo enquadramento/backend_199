@@ -1,3 +1,4 @@
+import os
 import folium
 from geopandas import read_file
 from folium.features import GeoJsonTooltip
@@ -69,6 +70,8 @@ def uso_da_terra(x):
         style_function=style_function
     ).add_to(x)
 
+
+
 def criar_mapa():
     
     mapa = folium.Map(
@@ -128,7 +131,7 @@ def criar_mapa():
         box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
         z-index: 9999;
     ">
-        <b>Legenda - Uso da Terra</b><br>
+        <b>Uso da Terra</b><br>
         <div><span style="background:#c9c996; width: 20px; height: 20px; display: inline-block; margin-right: 8px;"></span>Agricultura</div>
         <div><span style="background:#00ffff; width: 20px; height: 20px; display: inline-block; margin-right: 8px;"></span>Área Úmida</div>
         <div><span style="background:#e73e0b; width: 20px; height: 20px; display: inline-block; margin-right: 8px;"></span>Áreas antropiadas</div>
@@ -288,7 +291,8 @@ html, body {
 """)
 m = criar_mapa()
 m.get_root().html.add_child(fundo_mapa)
-m.save("pg_conheca/03_mapa_pg_conheca.html")
 
+caminho_saida = os.path.join(os.path.dirname(__file__), '..', 'pg_conheca', '03_mapa_pg_conheca.html')
+caminho_saida = os.path.abspath(caminho_saida)
 
-
+m.save(caminho_saida)
