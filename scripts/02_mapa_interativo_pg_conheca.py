@@ -207,6 +207,7 @@ def criar_mapa():
     </script>
     )"""
 
+
     script_click_iframe = folium.Element("""
     <script>
         window.addEventListener('load', function () {
@@ -219,12 +220,17 @@ def criar_mapa():
             map.eachLayer(function (layer) {
                 if (layer.feature && layer.feature.properties && layer.feature.properties.NOME && layer.feature.properties.DESC) {
                     layer.on('click', function () {
-                        var nome = layer.feature.properties.NOME;
-                        var desc = layer.feature.properties.DESC;
+                        var props = layer.feature.properties;
 
                         // Envia mensagem para o iframe pai
                         window.parent.postMessage(
-                            { type: 'baciaSelecionada', nome: nome, desc: desc },
+                            {
+                                type: 'baciaSelecionada',
+                                nome: props.NOME,
+                                desc: props.DESC,
+                                rio: props.RIO,
+                                area: props.AREA_M2
+                            },
                             '*'
                         );
 
@@ -252,6 +258,10 @@ def criar_mapa():
         });
     </script>
     """)
+
+
+
+
     travar_arraste_mouse = folium.Element("""
     <script>
         window.addEventListener('load', function () {

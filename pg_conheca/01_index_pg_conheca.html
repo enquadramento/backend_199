@@ -78,7 +78,7 @@
         min-height: 250px;
         }
 
-        #rio-info, #area-info h1 {
+        #rio-info h1, #area-info h1 {
         font-family: 'Nunito', sans-serif;
         font-size: 30px;
         initial-letter: 6px;
@@ -92,14 +92,16 @@
         min-height: 50px;
         }
 
-        #rio-info, #area-info p {
+        #rio-info p, #area-info p {
         font-family: 'Nunito', sans-serif;
+        font-weight: bold;
         font-size: 15px;
+        font-style: oblique;
         initial-letter: 6px;
         padding-left: 10%;
         padding-right: 15%;
         margin-top: 15px;
-        color: #C0DCD7 !important;
+        color: #202222;
         overflow-wrap: break-word; /*quebra de texto em palavras longas*/
         word-wrap: break-word; /* quebra de texto se necessário*/
         white-space: normal; /* permite que o texto quebre*/
@@ -113,7 +115,7 @@
         padding-left: 10%;
         padding-right: 15%;
         margin-top: 15px;
-        color: #C0DCD7 !important;
+        color: #202222;
         overflow-wrap: break-word;
         word-wrap: break-word;
         white-space: normal;
@@ -350,7 +352,7 @@
             </div>
             <div id="area-info">
                 <p>Área total da bacia:</p>
-                <h1>XXX.XXX.XXXX km²</h1>
+                <h1>3.603,11 km²</h1>
             </div>
 
             <div id="diagrama"> <p> Diagrama Unifilar</p></div>
@@ -412,11 +414,12 @@
     }
     </script>
     <!-- comunicar com o mapa em iframe-->
+
+
     <script>
         window.addEventListener('message', function(event) {
             if (event.data && event.data.type === 'baciaSelecionada') {
-                const nome = event.data.nome;
-                const desc = event.data.desc;
+                const { nome, desc, rio, area } = event.data;
 
                 const divNome = document.getElementById('bacia-info');
                 if (divNome) {
@@ -427,9 +430,21 @@
                 if (divDesc) {
                     divDesc.innerHTML = desc;
                 }
+
+                const h1Rio = document.querySelector('#rio-info h1');
+                if (h1Rio && rio) {
+                    h1Rio.textContent = rio;
+                }
+
+                const h1Area = document.querySelector('#area-info h1');
+                if (h1Area && area) {
+                    const area_km2 = (parseFloat(area) / 1_000_000).toFixed(2).replace('.', ',');
+                    h1Area.textContent = area_km2 + ' km²';
+                }
             }
-        });
+            });
     </script>
+
 
     <footer>
         <div class="container5">
