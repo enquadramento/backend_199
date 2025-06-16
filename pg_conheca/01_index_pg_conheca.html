@@ -6,6 +6,7 @@
     <title>Conheça a Bacia</title>
 
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet"> <!-- link da league spartan -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> <!-- link para a nunito-->
 
     <style>
         body {
@@ -13,10 +14,12 @@
             padding: 0;
             font-family: Arial, Helvetica, sans-serif;
             background-color: #3a595c !important;
+            position: relative;
 
             opacity: 0;
             transform: translateY(40px);
             animation: floatIn 1s ease-out forwards;
+            
         }
       
         @keyframes floatIn {
@@ -24,6 +27,28 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        @keyframes flutuarParaCima {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        } 
+
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+
+        .scroll-fade.show {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .container1 {
@@ -129,8 +154,8 @@
             letter-spacing: 6px; /* espaço entre letras*/ 
             padding-left: 5%; /* espaço entre a caixa da div e o texto a esquerda*/
             padding-right: 0%;
-            margin-top: 60px;
-            margin-bottom: 6px; /* espaço abaixo do título-estudo*/
+            margin-top: 0px;
+            margin-bottom: 20px; /* espaço abaixo do título-estudo*/
             text-transform: uppercase; /* maiúsculo */
             color: white; /* cor da fonte */
             background-color: rgb(71, 81, 77);
@@ -162,32 +187,36 @@
         }
 
         .popup {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.8);
-        justify-content: center;
-        align-items: center;
-        z-index: 999;
+            display: none;
+            position: fixed; /* IMPORTANTE: para fixar na tela */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 50%;
+
+
         }
 
         .popup-conteudo {
-        background: #202726;
-        padding: 20px;
-        max-width: 800px;
-        width: 90%;
-        max-height: 90%;
-        overflow-y: auto;
-        border-radius: 2px;
+            background: #202726;
+            padding: 20px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 90%;
+            overflow-y: auto;
+            border-radius: 2px;
+            animation: flutuarParaCima 0.4s ease-out;
         }
 
         .popup img {
-        width: 100%;
-        height: auto;
-        border-radius: 2px;
+            width: 100%;
+            height: auto;
+            border-radius: 2px;
         }
 
         .popup-texto {
@@ -305,8 +334,62 @@
         .imagem_rodape a {
             text-decoration: none;
         }
+
+        .texto-imgs {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.8em;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            z-index: 2;
+            pointer-events: none;
+            text-align: center;
+        }
+
+        .texto-cont6 {
+            position: center;
+            top: 50%;
+            margin: 10%;
+            transform: translate(-10%, -50%);
+            font-size: 1.8em;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            z-index: 2;
+            pointer-events: none;
+            text-align: center;
+        }
+        .container6 {
+            display: flex;
+            height: 900px;
+            background-color: #3a595c !important;
+        }
+        
+        .mapa2 {
+            width: 60%;
+            background-color: #3a595c !important;
+            display: 100%;
+            
+        }
+
+        .inf_uso {
+        font-family: 'Nunito', sans-serif;
+        font-size: 30px;
+        initial-letter: 6px;
+        padding-left: 8%;
+        padding-right: 3%;
+        font-style: italic;
+
+        opacity: 0;
+        transform: translateY(40px);
+        animation: floatIn 1s ease-out forwards;
+        }
     </style>
 </head>
+
 
 <body>
 
@@ -355,43 +438,34 @@
                 <h1>3.603,11 km²</h1>
             </div>
 
-            <div id="diagrama"> <p> Diagrama Unifilar</p></div>
+            <!-- <div id="diagrama"> <p> Diagrama Unifilar</p></div>
             <div class="galeria-diagrama" onclick="abrirPopup('../data/fotos/anhandui/SUB_gameleira.png', ' ')"> 
-                <img src="../data/fotos/anhandui/SUB_gameleira.png" alt="Sem dados"></div>
-
-
-
+                <img src="../data/fotos/anhandui/SUB_gameleira.png" alt="Sem dados"></div> -->
 
         </div> 
     </div>
+    <div class="scroll-fade">
     <div class="container4">
         <div class="container4_pt1"></div>
-            <div id="galeria"> GALERIA DE FOTOS</div>
+            <div id="galeria"> CONHEÇA ATRAVÉS DE FOTOS</div>
 
         <div class="container4_pt2">  
-            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/anhandui/DJI_20240813100022_0002_D.JPG', 'Esta é a explicação da Foto 1')"> 
-                <img src="../data/fotos/anhandui/DJI_20240813100022_0002_D.JPG" alt="Sem dados"></div>
-            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/anhandui/DJI_20240813100022_0002_D.JPG', 'Esta é a explicação da Foto 2')"> 
-                <img src="../data/fotos/anhandui/DJI_20240813100022_0002_D.JPG" alt="Sem dados"></div>
-            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/anhandui/DJI_20240813100022_0002_D.JPG', 'Esta é a explicação da Foto 3')"> 
-                <img src="../data/fotos/anhandui/DJI_20240813100022_0002_D.JPG" alt="Sem dados"></div> 
+            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/Rio Anhanduí/foto 1.JPG', 'Explicação para o Anhnanduí')"> 
+                <img src="../data/fotos/Rio Anhanduí/foto 1.JPG" alt="Sem dados"></div>
+            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/Rio Anhanduí/foto 2.JPG', 'Explicação para o Anhnanduí')"> 
+                <img src="../data/fotos/Rio Anhanduí/foto 2.JPG" alt="Sem dados"></div>
+            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/Rio Anhanduí/foto 3.JPG', 'Explicação para o Anhnanduí')"> 
+                <img src="../data/fotos/Rio Anhanduí/foto 3.JPG" alt="Sem dados"></div>
         </div>
         <div class="container4_pt2">  
-            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/anhandui/DJI_20240813100022_0002_D.JPG', 'Esta é a explicação da Foto 1')"> 
-                <img src="../data/fotos/anhandui/DJI_20240813100022_0002_D.JPG" alt="Sem dados"></div>
-            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/anhandui/DJI_20240813100022_0002_D.JPG', 'Esta é a explicação da Foto 2')"> 
-                <img src="../data/fotos/anhandui/DJI_20240813100022_0002_D.JPG" alt="Sem dados"></div>
-            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/anhandui/DJI_20240813100022_0002_D.JPG', 'Esta é a explicação da Foto 3')"> 
-                <img src="../data/fotos/anhandui/DJI_20240813100022_0002_D.JPG" alt="Sem dados"></div> 
-        </div>>
-        <div class="container4_pt2">  
-            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/anhandui/DJI_20240813100022_0002_D.JPG', 'Esta é a explicação da Foto 1')"> 
-                <img src="../data/fotos/anhandui/DJI_20240813100022_0002_D.JPG" alt="Sem dados"></div>
-            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/anhandui/DJI_20240813100022_0002_D.JPG', 'Esta é a explicação da Foto 2')"> 
-                <img src="../data/fotos/anhandui/DJI_20240813100022_0002_D.JPG" alt="Sem dados"></div>
-            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/anhandui/DJI_20240813100022_0002_D.JPG', 'Esta é a explicação da Foto 3')"> 
-                <img src="../data/fotos/anhandui/DJI_20240813100022_0002_D.JPG" alt="Sem dados"></div> 
+            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/Rio Anhanduí/foto 4.JPG', 'Explicação para o Anhnanduí')"> 
+                <img src="../data/fotos/Rio Anhanduí/foto 4.JPG" alt="Sem dados"></div>
+            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/Rio Anhanduí/foto 5.JPG', 'Explicação para o Anhnanduí')"> 
+                <img src="../data/fotos/Rio Anhanduí/foto 5.JPG" alt="Sem dados"></div>
+            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/Rio Anhanduí/foto 6.JPG', 'Explicação para o Anhnanduí')"> 
+                <img src="../data/fotos/Rio Anhanduí/foto 6.JPG" alt="Sem dados"></div> 
         </div>
+
     </div>
 
     <div id="popup" class="popup" onclick="fecharPopup()">
@@ -399,25 +473,145 @@
     <img id="popup-img" src="" alt="Imagem em destaque">
     <div id="popup-texto" class="popup-texto"></div>
      </div>
-</div>
+    </div>
+    </div>
 
-    <!-- popup de imagens  com click-->
+    <div class="scroll-fade">
+        <div id="galeria" style="margin-top: 3%;"> USO E OCUPAÇÃO DO SOLO</div>
+        <div class="container6">        
+            <div class="mapa2">
+            <iframe src="03_mapa_pg_conheca.html"></iframe>
+            </div>
+            <div style="width: auto; height: auto;"> 
+                <div class="texto-cont6">CLASSES DE USO E OCUPAÇÃO DO SOLO</div>
+
+                <div class="container_8" style="display: flex;">
+
+                    <div class="inf_uso" style="width: 60%;">
+                        <div style="padding-bottom: 2%;"> Área urbana: </div>
+                        <div style="padding-bottom: 2%;"> Pastagem: </div>
+                        <div style="padding-bottom: 2%;"> Agricultura: </div>
+                        <div style="padding-bottom: 2%;"> Vegetação: </div>
+                        <div style="padding-bottom: 2%;"> Área úmida: </div>
+                        <div style="padding-bottom: 2%;"> Área antropizada: </div>
+                        <div style="padding-bottom: 2%;"> Corpos hídricos: </div>
+                        </div>
+                    <div class="inf_uso" style="width: 30%;">
+                        <div id=inf-urb style="padding-bottom: 6%;"> XX.X%: </div>
+                        <div id=inf-past style="padding-bottom: 3%;"> XX.X% </div>
+                        <div id=inf-agro style="padding-bottom: 3%;"> XX.X% </div>
+                        <div id=inf-veg style="padding-bottom: 3%;"> XX.X% </div>
+                        <div id=inf-umd style="padding-bottom: 3%;"> XX.X% </div>
+                        <div id=inf-antr style="padding-bottom: 2%;"> XX.X% </div>
+                        <div id=inf-cp style="padding-bottom: 20%;"> XX.X% </div>
+                        </div>
+                
+                
+                <!-- SE BACIA-INFO FOR X, RETORNAR INFORMAÇÕES DA PLANILHA X -->
+
+
+            </div>
+        </div>
+
+        <!-- <div class="chamar-diag" style="height: 450px;width: 100%; justify-content: center; gap: 2%;display: flex;"></div> -->
+
+    </div>
+
+
+    <div class="scroll-fade">
+        <div id="galeria" style="margin-top: 3%;"> VISITA A PÁGINA DE DADOS SOCIAIS</div>
+        <div class="chamar-diag" style="height: 450px;width: 100%; justify-content: center; gap: 2%;display: flex;"></div>
+
+    </div>
+
+    <div id="galeria" style="margin-top: 3%;"> SAIBA MAIS SOBRE A BACIA AQUI</div>
+    
+    <div class="scroll-fade">
+
+        <div class="chamar-diag" style="height: 450px;width: 100%; justify-content: center; gap: 2%;display: flex;">
+
+            <div id="img1" style="width: 30%;position: relative;">
+            <div class="texto-imgs">PLANO DE TRABALHO</div>
+            <a href="https://enquadramentoanhan.wixsite.com/website/downloads" target="_blank">
+            <img src="../data/fotos/capa_produtos/plano_de_trabalho.avif" alt="diagnóstico" style="width: 100%; height: 400px; object-fit: cover;
+            transition: transform 0.6s ease"> </a>
+            </div>
+
+
+        <div id="img2" style="width: 30%;position: relative"> 
+                <div class="texto-imgs">DIAGNÓSTICO</div>
+            <a href="https://enquadramentoanhan.wixsite.com/website/downloads" target="_blank">
+            <img src="../data/fotos/capa_produtos/diagnostico.avif" alt="prognóstico" style="width: 100%; height: 400px; object-fit: cover;
+            transition: transform 0.6s ease"></a> 
+            </div>  
+
+        <div id="img3" style="width: 30%;position: relative"> 
+                <div class="texto-imgs" >PROGNÓSTICO</div>
+            <a href="https://enquadramentoanhan.wixsite.com/website/downloads" target="_blank">
+            <img src="../data/fotos/capa_produtos/prognostico.avif" alt="prognóstico" style="width: 100%; height: 400px; object-fit: cover;
+        transition: transform 0.6s ease"></a> 
+            </div>  
+        </div>
+
+    </div>
+
+    <!--  atualizar as fotos da galeria -->
     <script>
-    function abrirPopup(imagem, texto) {
-    document.getElementById('popup-img').src = imagem;
-    document.getElementById('popup-texto').innerText = texto;
-    document.getElementById('popup').style.display = 'flex';
+
+        async function atualizarGaleria(nomePasta) {
+            const containerImgs = document.querySelectorAll(".galeria-imagem");
+
+            // Para segurança em URLs, encode o nome da pasta:
+            const pasta = encodeURIComponent(nomePasta);
+
+            for (let i = 0; i < containerImgs.length; i++) {
+                const numeroFoto = i + 1;
+                const caminhoImagem = `../data/fotos/${pasta}/foto ${numeroFoto}.JPG`;
+                const caminhoTexto = `../data/textos/${pasta}/texto ${numeroFoto}.txt`;
+
+                // Atualiza o src da imagem
+                const imgTag = containerImgs[i].querySelector("img");
+                if (imgTag) {
+                    imgTag.src = caminhoImagem;
+                }
+
+                // Atualiza o onclick para buscar o texto via fetch antes de abrir o popup
+                containerImgs[i].setAttribute("onclick", `abrirPopupComTexto('${caminhoImagem}', '${caminhoTexto}')`);
+            }
+        }
+
+        async function abrirPopupComTexto(imagem, caminhoTexto) {
+            let texto = "Sem descrição";
+            try {
+                const response = await fetch(caminhoTexto);
+                if (response.ok) {
+                    texto = await response.text();
+                }
+            } catch (e) {
+                console.warn('Erro ao carregar o texto:', e);
+            }
+            abrirPopup(imagem, texto);
+        }
+
+        function abrirPopup(src, texto) {
+        const popup = document.getElementById('popup');
+        const img = document.getElementById('popup-img');
+        const textoDiv = document.getElementById('popup-texto');
+
+        img.src = src;
+        textoDiv.textContent = texto;
+        popup.style.display = 'flex'; // ou 'block' se não usar flex
     }
 
-    function fecharPopup() {
-    document.getElementById('popup').style.display = 'none';
-    }
+
+         function fecharPopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
     </script>
     <!-- comunicar com o mapa em iframe-->
-
-
     <script>
-        window.addEventListener('message', function(event) {
+        window.addEventListener('message', async function(event) {
             if (event.data && event.data.type === 'baciaSelecionada') {
                 const { nome, desc, rio, area } = event.data;
 
@@ -441,10 +635,32 @@
                     const area_km2 = (parseFloat(area) / 1_000_000).toFixed(2).replace('.', ',');
                     h1Area.textContent = area_km2 + ' km²';
                 }
-            }
-            });
-    </script>
 
+                // Agora funciona corretamente!
+                await atualizarGaleria(nome);
+            }
+        });
+    </script>
+    <!-- fazer o scroll fade -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const elements = document.querySelectorAll(".scroll-fade");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                    // Desativa observação após aparecer (opcional)
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.4, // 10% do elemento visível já ativa
+        });
+
+        elements.forEach((el) => observer.observe(el));
+    });
+    </script>
 
     <footer>
         <div class="container5">
