@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conheça a Bacia</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet"> <!-- link da league spartan -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> <!-- link para a nunito-->
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #3a595c !important;
+            position: relative;
+
+            opacity: 0;
+            transform: translateY(40px);
+            animation: floatIn 1s ease-out forwards;
+            
+        }
+      
+        @keyframes floatIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes flutuarParaCima {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        } 
+
+
+        .flutuar-esquerda {
+        position: relative;
+        animation: direitaParaEsquerda 2s ease-in-out forwards;
+        }
+
+        @keyframes direitaParaEsquerda {
+        from {
+            left: 100%;
+            opacity: 0;
+        }
+        to {
+            left: 0;
+            opacity: 1;
+        }
+        }
+
+
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(5%);
+            transition: all 1s ease-out;
+        }
+
+        .scroll-fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .container1 {
+            display: flex;
+            height: 100vh;
+            background-color: #3a595c !important;
+        }
+    
+        .textos {
+            width: 65%;
+            background-color: #3a595c;
+        }
+
+        .mapa {
+            width: 35%;
+            background-color: #3a595c !important;
+            display: 100%;
+            
+        }        
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }     
+        
+        #bacia-info {
+            font-family: 'League Spartan',sans-serif; /*tipo */
+            font-size:60px; /*tamanho */
+            font-weight: bold; /*negrito*/
+            letter-spacing: 6px; /* espaço entre letras*/ 
+            padding-left: 10%; /* espaço entre a caixa da div e o texto a esquerda*/
+            padding-right: 10%;
+            margin-top: 15px;
+            margin-bottom: 6px; /* espaço abaixo do título-estudo*/
+            text-transform: uppercase; /* maiúsculo */
+            color: white; /* cor da fonte */
+
+        }
+        
+        #desc-info {
+        font-family: 'Nunito', sans-serif;
+        font-size: 20px;
+        initial-letter: 6px;
+        padding-left: 10%;
+        padding-right: 15%;
+        margin-top: 15px;
+        color: #C0DCD7 !important;
+        overflow-wrap: break-word; /*quebra de texto em palavras longas*/
+        word-wrap: break-word; /* quebra de texto se necessário*/
+        white-space: normal; /* permite que o texto quebre*/
+        min-height: 250px;
+        }
+
+        #rio-info h1, #area-info h1 {
+        font-family: 'Nunito', sans-serif;
+        font-size: 30px;
+        initial-letter: 6px;
+        padding-left: 10%;
+        padding-right: 15%;
+        margin-top: 15px;
+        color: #C0DCD7 !important;
+        overflow-wrap: break-word; /*quebra de texto em palavras longas*/
+        word-wrap: break-word; /* quebra de texto se necessário*/
+        white-space: normal; /* permite que o texto quebre*/
+        min-height: 50px;
+        }
+
+        #rio-info p, #area-info p {
+        font-family: 'Nunito', sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+        font-style: oblique;
+        initial-letter: 6px;
+        padding-left: 10%;
+        padding-right: 15%;
+        margin-top: 15px;
+        color: #202222;
+        overflow-wrap: break-word; /*quebra de texto em palavras longas*/
+        word-wrap: break-word; /* quebra de texto se necessário*/
+        white-space: normal; /* permite que o texto quebre*/
+        min-height: 30px;
+        }
+
+        #diagrama p {
+        font-family: 'Nunito', sans-serif;
+        font-size: 15px;
+        initial-letter: 6px;
+        padding-left: 10%;
+        padding-right: 15%;
+        margin-top: 15px;
+        color: #202222;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        white-space: normal;
+        min-height: 5px;
+        }
+
+        #galeria {
+            font-family: 'League Spartan',sans-serif; /*tipo */
+            font-size:60px; /*tamanho */
+            font-weight: bold; /*negrito*/
+            letter-spacing: 6px; /* espaço entre letras*/ 
+            padding-left: 5%; /* espaço entre a caixa da div e o texto a esquerda*/
+            padding-right: 0%;
+            margin-top: 0px;
+            margin-bottom: 20px; /* espaço abaixo do título-estudo*/
+            text-transform: uppercase; /* maiúsculo */
+            color: white; /* cor da fonte */
+            background-color: rgb(71, 81, 77);
+        }
+
+        .container4_pt2 {
+            display: flex;
+            width: 100%;
+            background-color: #3a595c !important; /*#3a595c*/
+            
+        }
+
+        .galeria-imagem {
+        width: 33%;
+        height: 350px;
+        overflow: hidden;
+        padding: 10px;
+        }
+
+        .galeria-imagem img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+        }
+
+        .galeria-imagem:hover img {
+        transform: scale(1.1); /* Zoom suave */
+        }
+
+        .popup {
+            display: none;
+            position: fixed; /* IMPORTANTE: para fixar na tela */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 50%;
+
+
+        }
+
+        .popup-conteudo {
+            background: #202726;
+            padding: 20px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 90%;
+            overflow-y: auto;
+            border-radius: 2px;
+            animation: flutuarParaCima 0.4s ease-out;
+        }
+
+        .popup img {
+            width: 100%;
+            height: auto;
+            border-radius: 2px;
+        }
+
+        .popup-texto {
+        margin-top: 15px;
+        font-size: 16px;
+        color: #c0aeae;
+        line-height: 1.6;
+        }
+
+        .galeria-diagrama {
+        padding: 3%;
+        margin-left: 10%;
+        max-width: 1000px;
+        max-height: 200px;
+        overflow: hidden;
+        padding: 10px;  
+        }
+
+        .galeria-diagrama img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+        }
+           
+        .container0 {
+            position: relative;
+            width: 100%; 
+            height: 319px;
+        }
+
+        .texto-banner {
+            font-family: 'League Spartan',sans-serif; /*tipo */
+            letter-spacing: 6px; /* espaço entre letras*/ 
+            margin: 10px; /* espaço abaixo do título-estudo*/
+            line-height: 60px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            color: white;
+            text-align: center;
+            position: absolute;
+            flex-direction: column;
+            text-align: center;
+            width: 60%;
+            font-size: 55px;
+                     
+        }
+
+        .texto-pequeno {
+            font-family: 'League Spartan',sans-serif; /*tipo */
+            letter-spacing: 6px; /* espaço entre letras*/ 
+            margin: 0px; /* espaço abaixo do título-estudo*/
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            color: white;
+            text-align: center;
+            position: absolute;
+            flex-direction: column;
+            text-align: center;
+            width: 60%;
+            font-size: 24px;
+                     
+        }
+
+        .texto-pequeno2 {
+            font-family: 'League Spartan',sans-serif; /*tipo */
+            letter-spacing: 6px; /* espaço entre letras*/ 
+            margin: 15px; /* espaço abaixo do título-estudo*/
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            color: white;
+            text-align: center;
+            position: absolute;
+            flex-direction: column;
+            text-align: center;
+            width: 60%;
+            font-size: 24px;
+            
+                     
+        }
+
+        .container5 {
+            
+            position: relative;
+            background-color: #CCCCCC;
+            width: 100%;
+            height: 150px;
+            justify-content: space-between;
+        }
+
+        .conteudo-imagens {
+        width: 60%;
+        display: flex;
+        height: 150px;
+        margin: auto;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        }
+
+        .imagem_rodape {
+            text-align: center;
+        }
+
+        .imagem_rodape img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .imagem_rodape a {
+            text-decoration: none;
+        }
+
+        .texto-imgs {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.8em;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            z-index: 2;
+            pointer-events: none;
+            text-align: center;
+        }
+
+        .texto-cont6 {
+            position: center;
+            top: 50%;
+            margin: 10%;
+            transform: translate(-10%, -50%);
+            font-size: 1.8em;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            z-index: 2;
+            pointer-events: none;
+            text-align: center;
+        }
+        .container6 {
+            display: flex;
+            height: 900px;
+            background-color: #3a595c !important;
+        }
+        
+        .mapa3 {
+            width: 60%;
+            background-color: #3a595c !important;
+            display: 100%;
+            
+        }
+
+        .inf_uso {
+        font-family: 'Nunito', sans-serif;
+        font-size: 30px;
+        initial-letter: 6px;
+        padding-left: 8%;
+        padding-right: 3%;
+        font-style: italic;
+
+        opacity: 0;
+        transform: translateY(40px);
+        animation: floatIn 1s ease-out forwards;
+        }
+
+        .quadrosocial {
+        flex: 1;
+        height: 250px;
+        background-color: rgb(54, 61, 68);
+        border-radius: 10%;
+        color: white;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        }
+
+        .chamar-diag {
+        width: 70%;
+        height: 300px;
+        display: flex;
+        justify-content: space-between; /* distribui igualmente */
+        align-items: center;
+        gap: 2%;
+        max-width: 1200px;
+        margin: 0 auto; 
+        }
+
+        .quadrosocial:hover {
+        transform: scale(1.1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+    </style>
+</head>
+
+
+<body>
+
+    <div class="container0">
+        <div class="banner" style="background-color: #2b3435;"> <img src="../data/fotos/cabecalho_rodape/DJI_20240712173308_0208_D.JPG" alt="Sem dados"
+            style="width: 100%; height: 319px;object-fit: cover; object-position: 50% 50%; opacity: 0.65;" fetchpriority="high"> </div>
+        <div class="texto-pequeno">ESTUDOS PARA SUBISIDIAR A REVISÃO DO</div>
+        <div class="texto-banner">ENQUADRAMENTO DA BACIA HIDROGRÁFICA DO RIO ANHANDUÍ</div>
+        <div class="texto-pequeno2">ATÉ A CONFLUÊNCIA COM O CÓRREGO CACHOEIRA</div>
+        
+    </div>
+
+  
+    
+
+
+    <footer>
+        <div class="container5">
+            <div class="conteudo-imagens">
+                <div class="imagem_rodape" style="width: 20%;"> 
+                    <a href="https://demeterengenharia.com.br/" target="_blank">
+                    <img src="../data/fotos/cabecalho_rodape/img_dmtr.png" alt="DMTR engenharia" style="width: 155px;height: 70px;">
+                    </a></div>
+                <div class="imagem_rodape" style="width: 40%;"> 
+                    <a href="https://www.aguasguariroba.com.br/" target="_blank">
+                    <img src="../data/fotos/cabecalho_rodape/aguas.png" alt="DMTR engenharia" style="width: 267px;height: 40px;">
+                    </a></div>
+                <div class="imagem_rodape"style="width: 40%;"> 
+                    <a href="https://www.imasul.ms.gov.br/" target="_blank">
+                    <img src="../data/fotos/cabecalho_rodape/imasul.png" alt="DMTR engenharia" style="width: 491px; height: 87px;">
+                    </a>
+                </div>
+            </div>
+            <div style="background-color: #CCCCCC;display: flex;"> 
+                <div style="margin: auto; height: 30px;width: 60%;background-color: #CCCCCC;text-align: center;font-family: 'League Spartan',sans-serif; font-size: 20px; color: rgb(102, 102, 102) ;"> DEMÉTER ENGENHARIA LTDA - TODOS OS DIREITOS RESERVADOS.</div>
+
+            </div>
+            
+        </div>
+    </footer>
+</body>
+</html>
