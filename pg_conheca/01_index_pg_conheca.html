@@ -40,9 +40,27 @@
             }
         } 
 
+
+        .flutuar-esquerda {
+        position: relative;
+        animation: direitaParaEsquerda 2s ease-in-out forwards;
+        }
+
+        @keyframes direitaParaEsquerda {
+        from {
+            left: 100%;
+            opacity: 0;
+        }
+        to {
+            left: 0;
+            opacity: 1;
+        }
+        }
+
+
         .scroll-fade {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(5%);
             transition: all 1s ease-out;
         }
 
@@ -164,7 +182,7 @@
         .container4_pt2 {
             display: flex;
             width: 100%;
-            background-color: #3a595c !important;
+            background-color: #3a595c !important; /*#3a595c*/
             
         }
 
@@ -300,6 +318,7 @@
             text-align: center;
             width: 60%;
             font-size: 24px;
+            
                      
         }
 
@@ -368,7 +387,7 @@
             background-color: #3a595c !important;
         }
         
-        .mapa2 {
+        .mapa3 {
             width: 60%;
             background-color: #3a595c !important;
             display: 100%;
@@ -387,6 +406,37 @@
         transform: translateY(40px);
         animation: floatIn 1s ease-out forwards;
         }
+
+        .quadrosocial {
+        flex: 1;
+        height: 250px;
+        background-color: rgb(54, 61, 68);
+        border-radius: 10%;
+        color: white;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        }
+
+        .chamar-diag {
+        width: 70%;
+        height: 350px;
+        display: flex;
+        justify-content: space-between; /* distribui igualmente */
+        align-items: center;
+        gap: 2%;
+        max-width: 1200px;
+        margin: 0 auto; 
+        }
+
+        .quadrosocial:hover {
+        transform: scale(1.1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+        
     </style>
 </head>
 
@@ -404,7 +454,7 @@
 
     <div class="container1">
         <div class="mapa">
-             <iframe src="03_mapa_pg_conheca.html"></iframe>
+             <iframe id="mapa1" src="03_mapa_pg_conheca.html"></iframe>
         </div>
 
         <div class="textos">
@@ -478,49 +528,54 @@
 
     <div class="scroll-fade">
         <div id="galeria" style="margin-top: 3%;"> USO E OCUPAÇÃO DO SOLO</div>
-        <div class="container6">        
-            <div class="mapa2">
-            <iframe src="03_mapa_pg_conheca.html"></iframe>
-            </div>
-            <div style="width: auto; height: auto;"> 
-                <div class="texto-cont6">CLASSES DE USO E OCUPAÇÃO DO SOLO</div>
+    </div>
 
+    <div class="scroll-fade">
+        <div class="container6">        
+            <div class="mapa3"><iframe id="mapa2" src="03_mapa_pg_conheca_uso.html"></iframe></div>
+            <div style="width: 55%; height: auto;"> 
+                
+                <div class="texto-cont6" style="margin-left: 50%;text-align: center;">CLASSES DE USO E OCUPAÇÃO DO SOLO</div>
                 <div class="container_8" style="display: flex;">
 
                     <div class="inf_uso" style="width: 60%;">
-                        <div style="padding-bottom: 2%;"> Área urbana: </div>
-                        <div style="padding-bottom: 2%;"> Pastagem: </div>
-                        <div style="padding-bottom: 2%;"> Agricultura: </div>
-                        <div style="padding-bottom: 2%;"> Vegetação: </div>
-                        <div style="padding-bottom: 2%;"> Área úmida: </div>
-                        <div style="padding-bottom: 2%;"> Área antropizada: </div>
-                        <div style="padding-bottom: 2%;"> Corpos hídricos: </div>
+                        <div style="padding-bottom: 2%; text-align: right;color: #C0DCD7 !important;"> Área urbana: </div>
+                        <div style="padding-bottom: 2%;text-align: right; color: #C0DCD7;"> Pastagem: </div>
+                        <div style="padding-bottom: 2%;text-align: right;color: #C0DCD7;"> Agricultura: </div>
+                        <div style="padding-bottom: 2%;text-align: right;color: #C0DCD7;"> Vegetação: </div>
+                        <div style="padding-bottom: 2%;text-align: right; color: #C0DCD7;"> Área úmida: </div>
+                        <div style="padding-bottom: 2%;text-align: right;color: #C0DCD7;"> Área antropizada: </div>
+                        <div style="padding-bottom: 2%;text-align: right; color: #C0DCD7;"> Corpos hídricos: </div>
                         </div>
-                    <div class="inf_uso" style="width: 30%;">
-                        <div id=inf-urb style="padding-bottom: 6%;"> XX.X%: </div>
-                        <div id=inf-past style="padding-bottom: 3%;"> XX.X% </div>
-                        <div id=inf-agro style="padding-bottom: 3%;"> XX.X% </div>
-                        <div id=inf-veg style="padding-bottom: 3%;"> XX.X% </div>
-                        <div id=inf-umd style="padding-bottom: 3%;"> XX.X% </div>
-                        <div id=inf-antr style="padding-bottom: 2%;"> XX.X% </div>
-                        <div id=inf-cp style="padding-bottom: 20%;"> XX.X% </div>
+                    <div class="inf_uso" style="width: 40%;">
+                        <div id=inf-urb style="padding-bottom: 0%;text-align: left;"> 1.278,58 km²</div>
+                        <div id=inf-past style="padding-bottom: 4%;text-align: left"> 13,21 km²</div>
+                        <div id=inf-agro style="padding-bottom: 4%;text-align: left"> 118.69 km²</div>
+                        <div id=inf-veg style="padding-bottom: 3%;text-align: left"> 226,15 km²</div>
+                        <div id=inf-umd style="padding-bottom: 3%;text-align: left"> 8,55 km²</div>
+                        <div id=inf-antr style="padding-bottom: 2%;text-align: left"> 880,91 km² </div>
+                        <div id=inf-cp style="padding-bottom: 20%;text-align: left"> 537,02 km² </div>
                         </div>
                 
-                
-                <!-- SE BACIA-INFO FOR X, RETORNAR INFORMAÇÕES DA PLANILHA X -->
-
-
             </div>
         </div>
 
         <!-- <div class="chamar-diag" style="height: 450px;width: 100%; justify-content: center; gap: 2%;display: flex;"></div> -->
 
     </div>
-
+    </div>
 
     <div class="scroll-fade">
-        <div id="galeria" style="margin-top: 3%;"> VISITA A PÁGINA DE DADOS SOCIAIS</div>
-        <div class="chamar-diag" style="height: 450px;width: 100%; justify-content: center; gap: 2%;display: flex;"></div>
+        <div id="galeria" style="margin-top: 3%;"> DADOS SOCIAIS</div>
+
+        <div class="chamar-diag">
+            <div class="quadrosocial">POPULAÇÃO</div>
+            <div class="quadrosocial">OCUPAÇÃO E RENDA</div>
+            <div class="quadrosocial">EDUCAÇÃO</div>
+            <div class="quadrosocial">SAÚDE</div>
+
+        </div>
+
 
     </div>
 
@@ -528,8 +583,7 @@
     
     <div class="scroll-fade">
 
-        <div class="chamar-diag" style="height: 450px;width: 100%; justify-content: center; gap: 2%;display: flex;">
-
+        <div class="chamar-mais" style="height: 450px;width: 100%; justify-content: center; gap: 2%;display: flex;">
             <div id="img1" style="width: 30%;position: relative;">
             <div class="texto-imgs">PLANO DE TRABALHO</div>
             <a href="https://enquadramentoanhan.wixsite.com/website/downloads" target="_blank">
@@ -609,11 +663,12 @@
         }
 
     </script>
+
     <!-- comunicar com o mapa em iframe-->
     <script>
         window.addEventListener('message', async function(event) {
             if (event.data && event.data.type === 'baciaSelecionada') {
-                const { nome, desc, rio, area } = event.data;
+                const { nome, desc, rio, area, bounds } = event.data;
 
                 const divNome = document.getElementById('bacia-info');
                 if (divNome) {
@@ -636,11 +691,62 @@
                     h1Area.textContent = area_km2 + ' km²';
                 }
 
-                // Agora funciona corretamente!
+                // refatorar o código para ficar mais
+
+                const updateDiv = (id, valor) => {
+                    const el = document.getElementById(id);
+                    if (!el) return;
+
+                    let num = parseFloat(valor);
+                    if (!isNaN(num) && num > 0) {
+                        // Converte para string com 2 casas decimais e vírgula como separador
+                        const formatado = num.toFixed(2).replace('.', ',') + ' km²';
+                        el.innerHTML = formatado;
+                    } else {
+                        // Se for zero, negativo, nulo, string vazia, etc.
+                        el.innerHTML = '-';
+                    }
+                }
+
+                updateDiv('inf-urb', event.data.inf_urb);
+                updateDiv('inf-past', event.data.inf_past);
+                updateDiv('inf-agro', event.data.inf_agro);
+                updateDiv('inf-veg', event.data.inf_veg);
+                updateDiv('inf-umd', event.data.inf_umd);
+                updateDiv('inf-antr', event.data.inf_antr);
+                updateDiv('inf-cp', event.data.inf_cp);
+
+                const mapa2Frame = document.getElementById('mapa2');
+                if (mapa2Frame && bounds) {
+                    mapa2Frame.contentWindow.postMessage({
+                        type: 'centralizarMapa',
+                        bounds: bounds,
+                        nome: nome
+                    }, '*');
+                }
+
                 await atualizarGaleria(nome);
             }
         });
     </script>
+
+    <!-- comunicar com a lista suspensa e mapa em iframe -->
+    <script>
+        let camadaSelecionada = null;
+    let mapFrame = document.getElementById('bacia-info'); // ID do seu <iframe>
+
+    document.getElementById('seletor-bacias').addEventListener('change', function() {
+        const nomeSelecionado = this.value;
+        if (!nomeSelecionado || !mapFrame || !mapFrame.contentWindow) return;
+
+        mapFrame.contentWindow.postMessage({
+            type: 'selecionarBacia',
+            nome: nomeSelecionado
+        }, '*');
+    });
+    </script>
+
+
     <!-- fazer o scroll fade -->
     <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -662,6 +768,9 @@
     });
     </script>
 
+    
+
+
     <footer>
         <div class="container5">
             <div class="conteudo-imagens">
@@ -670,17 +779,17 @@
                     <img src="../data/fotos/cabecalho_rodape/img_dmtr.png" alt="DMTR engenharia" style="width: 155px;height: 70px;">
                     </a></div>
                 <div class="imagem_rodape" style="width: 40%;"> 
-                    <a href="https://demeterengenharia.com.br/" target="_blank">
+                    <a href="https://www.aguasguariroba.com.br/" target="_blank">
                     <img src="../data/fotos/cabecalho_rodape/aguas.png" alt="DMTR engenharia" style="width: 267px;height: 40px;">
                     </a></div>
                 <div class="imagem_rodape"style="width: 40%;"> 
-                    <a href="https://demeterengenharia.com.br/" target="_blank">
+                    <a href="https://www.imasul.ms.gov.br/" target="_blank">
                     <img src="../data/fotos/cabecalho_rodape/imasul.png" alt="DMTR engenharia" style="width: 491px; height: 87px;">
                     </a>
                 </div>
             </div>
             <div style="background-color: #CCCCCC;display: flex;"> 
-                <div style="margin: auto;width: 60%;background-color: #CCCCCC;text-align: center;font-family: 'League Spartan',sans-serif; font-size: 20px; color: rgb(102, 102, 102) ;"> DEMÉTER ENGENHARIA LTDA - TODOS OS DIREITOS RESERVADOS.</div>
+                <div style="margin: auto; height: 30px;width: 60%;background-color: #CCCCCC;text-align: center;font-family: 'League Spartan',sans-serif; font-size: 20px; color: rgb(102, 102, 102) ;"> DEMÉTER ENGENHARIA LTDA - TODOS OS DIREITOS RESERVADOS.</div>
 
             </div>
             
