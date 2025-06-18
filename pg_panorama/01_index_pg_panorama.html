@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conheça a Bacia</title>
+    <title>Panorama Social</title>
+    
 
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet"> <!-- link da league spartan -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> <!-- link para a nunito-->
@@ -13,13 +14,23 @@
             margin: 0;
             padding: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #3a595c !important;
+
             position: relative;
 
             opacity: 0;
             transform: translateY(40px);
             animation: floatIn 1s ease-out forwards;
             
+        }
+
+        @media (max-width: 768px) {
+        .menu {
+            flex-direction: column;
+        }
+
+        .quadros {
+            width: 100%;
+        }
         }
       
         @keyframes floatIn {
@@ -57,7 +68,6 @@
         }
         }
 
-
         .scroll-fade {
             opacity: 0;
             transform: translateY(5%);
@@ -69,30 +79,7 @@
             transform: translateY(0);
         }
         
-        .container1 {
-            display: flex;
-            height: 100vh;
-            background-color: #3a595c !important;
-        }
-    
-        .textos {
-            width: 65%;
-            background-color: #3a595c;
-        }
-
-        .mapa {
-            width: 35%;
-            background-color: #3a595c !important;
-            display: 100%;
-            
-        }        
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }     
-        
+  
         #bacia-info {
             font-family: 'League Spartan',sans-serif; /*tipo */
             font-size:60px; /*tamanho */
@@ -121,145 +108,7 @@
         min-height: 250px;
         }
 
-        #rio-info h1, #area-info h1 {
-        font-family: 'Nunito', sans-serif;
-        font-size: 30px;
-        initial-letter: 6px;
-        padding-left: 10%;
-        padding-right: 15%;
-        margin-top: 15px;
-        color: #C0DCD7 !important;
-        overflow-wrap: break-word; /*quebra de texto em palavras longas*/
-        word-wrap: break-word; /* quebra de texto se necessário*/
-        white-space: normal; /* permite que o texto quebre*/
-        min-height: 50px;
-        }
-
-        #rio-info p, #area-info p {
-        font-family: 'Nunito', sans-serif;
-        font-weight: bold;
-        font-size: 15px;
-        font-style: oblique;
-        initial-letter: 6px;
-        padding-left: 10%;
-        padding-right: 15%;
-        margin-top: 15px;
-        color: #202222;
-        overflow-wrap: break-word; /*quebra de texto em palavras longas*/
-        word-wrap: break-word; /* quebra de texto se necessário*/
-        white-space: normal; /* permite que o texto quebre*/
-        min-height: 30px;
-        }
-
-        #diagrama p {
-        font-family: 'Nunito', sans-serif;
-        font-size: 15px;
-        initial-letter: 6px;
-        padding-left: 10%;
-        padding-right: 15%;
-        margin-top: 15px;
-        color: #202222;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-        white-space: normal;
-        min-height: 5px;
-        }
-
-        #galeria {
-            font-family: 'League Spartan',sans-serif; /*tipo */
-            font-size:60px; /*tamanho */
-            font-weight: bold; /*negrito*/
-            letter-spacing: 6px; /* espaço entre letras*/ 
-            padding-left: 5%; /* espaço entre a caixa da div e o texto a esquerda*/
-            padding-right: 0%;
-            margin-top: 0px;
-            margin-bottom: 20px; /* espaço abaixo do título-estudo*/
-            text-transform: uppercase; /* maiúsculo */
-            color: white; /* cor da fonte */
-            background-color: rgb(71, 81, 77);
-        }
-
-        .container4_pt2 {
-            display: flex;
-            width: 100%;
-            background-color: #3a595c !important; /*#3a595c*/
             
-        }
-
-        .galeria-imagem {
-        width: 33%;
-        height: 350px;
-        overflow: hidden;
-        padding: 10px;
-        }
-
-        .galeria-imagem img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.6s ease;
-        }
-
-        .galeria-imagem:hover img {
-        transform: scale(1.1); /* Zoom suave */
-        }
-
-        .popup {
-            display: none;
-            position: fixed; /* IMPORTANTE: para fixar na tela */
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 50%;
-
-
-        }
-
-        .popup-conteudo {
-            background: #202726;
-            padding: 20px;
-            max-width: 800px;
-            width: 90%;
-            max-height: 90%;
-            overflow-y: auto;
-            border-radius: 2px;
-            animation: flutuarParaCima 0.4s ease-out;
-        }
-
-        .popup img {
-            width: 100%;
-            height: auto;
-            border-radius: 2px;
-        }
-
-        .popup-texto {
-        margin-top: 15px;
-        font-size: 16px;
-        color: #c0aeae;
-        line-height: 1.6;
-        }
-
-        .galeria-diagrama {
-        padding: 3%;
-        margin-left: 10%;
-        max-width: 1000px;
-        max-height: 200px;
-        overflow: hidden;
-        padding: 10px;  
-        }
-
-        .galeria-diagrama img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.6s ease;
-        }
-           
         .container0 {
             position: relative;
             width: 100%; 
@@ -368,73 +217,126 @@
             text-align: center;
         }
 
-        .texto-cont6 {
-            position: center;
-            top: 50%;
-            margin: 10%;
-            transform: translate(-10%, -50%);
-            font-size: 1.8em;
-            font-weight: bold;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-            z-index: 2;
-            pointer-events: none;
-            text-align: center;
+        #galeria {
+            font-family: 'League Spartan',sans-serif; /*tipo */
+            font-size:60px; /*tamanho */
+            font-weight: bold; /*negrito*/
+            letter-spacing: 6px; /* espaço entre letras*/ 
+            padding-left: 5%; /* espaço entre a caixa da div e o texto a esquerda*/
+            padding-right: 0%;
+            margin-top: 20px;
+            padding-top: 1%;
+            margin-bottom: 20px; /* espaço abaixo do título-estudo*/
+            text-transform: uppercase; /* maiúsculo */
+            color: white; /* cor da fonte */
+            background-color: rgb(71, 81, 77);
+            width: 100%;
+            align-content: center;
         }
-        .container6 {
+
+        .container1 {
+            
+            height: 100%;
+            width: 100%;
+            background-color: rgb(245, 243, 243);
+        }
+
+         .container1_1 {
             display: flex;
-            height: 900px;
-            background-color: #3a595c !important;
+            height: 660px;
+
         }
-        
-        .mapa3 {
-            width: 60%;
-            background-color: #3a595c !important;
-            display: 100%;
+
+        .container1_2 {
+            width: 40%;
+            height: auto;
+            justify-content: space-between; /* distribui igualmente */
+            align-items: center;
+        }
+
+        .texto-medio {
+            font-family: 'League Spartan',sans-serif; /*tipo */
+            font-size:30px; /*tamanho */
+            font-weight: bold; /*negrito*/
+            letter-spacing: 6px; /* espaço entre letras*/ 
+            padding-left: 10%;   /* espaço entre a caixa da div e o texto a esquerda*/
+            padding-right: 10%;
+            margin-top: 15px;
+            margin-bottom: 6px; /* espaço abaixo do título-estudo*/
+            text-transform: uppercase; /* maiúsculo */
+            color: rgb(75, 83, 74); /* cor da fonte */            
+
+        }
+
+        .caixa-texto-medio {
+            width: 100%;
+            display: block;
+            height: 200px;
+            justify-content: space-between; /* distribui igualmente */
+            align-items: center;
+            align-content: center;
+            gap: 2%;
+        }
+
+        .caixa-texto-medio2 {
+            margin-left: 10%;
+            width: 80%;
+            text-align: center;
+            height: 200px;
+            justify-content: space-between; /* distribui igualmente */
+            align-items: center;
+            gap: 2%;
             
         }
 
-        .inf_uso {
-        font-family: 'Nunito', sans-serif;
-        font-size: 30px;
-        initial-letter: 6px;
-        padding-left: 8%;
-        padding-right: 3%;
-        font-style: italic;
+        .texto-medio2 {
+            text-align: left;
+            font-family: 'League Spartan',sans-serif; /*tipo */
+            font-size:25px; /*tamanho */
+            font-weight: bold; /*negrito*/
+            letter-spacing: 6px; /* espaço entre letras*/ 
+            padding-left: 10%; /* espaço entre a caixa da div e o texto a esquerda*/
+            padding-right: 10%;
+            margin-top: 15px;
+            margin-bottom: 6px; /* espaço abaixo do título-estudo*/
+            font-style: italic;
+            line-height: 200%;
+            color: rgb(110, 98, 98); /* cor da fonte */            
 
-        opacity: 0;
-        transform: translateY(40px);
-        animation: floatIn 1s ease-out forwards;
         }
 
-        .quadrosocial {
-        flex: 1;
-        height: 250px;
-        background-color: rgb(54, 61, 68);
-        border-radius: 10%;
-        color: white;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
+        .container1_3 {
+            width: 60%;
+            background-color: aquamarine;
         }
 
-        .chamar-diag {
-        width: 70%;
-        height: 300px;
-        display: flex;
-        justify-content: space-between; /* distribui igualmente */
-        align-items: center;
-        gap: 2%;
-        max-width: 1200px;
-        margin: 0 auto; 
+        .container1_4 {
+            width: 100%;
+            height: 400px;
+            display: block;
+            margin: 0%;
+
+            
+        } 
+        
+        .container2 {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(245, 243, 243);
         }
 
-        .quadrosocial:hover {
-        transform: scale(1.1);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        .container2_1 {
+            width: 100%;
+            height: 400px;
+            display: block;
+            margin: 0%;
+        }
+ 
+        .container2_1 {
+            width: 100%;
+            height: 400px;
+            display: block;
+            margin: 0%;
         }
         
     </style>
@@ -452,9 +354,108 @@
         
     </div>
 
-  
-    
+    <!-- CONTAINER PAI 1 -->
+    <div class="container1">
+            <div class="scroll-fade">
+                <div id="galeria"> DADOS POPULACIONAIS</div>
+            </div>
+            
+            <div class="scroll-fade">
+            <div class="container1_1">
+                <div class="container1_2">
+                    <div class="caixa-texto-medio">
+                        <div class="texto-medio">População por município: </div>
+                    </div>
+                    <div class="caixa-texto-medio2">
+                        <div class="texto-medio2">
+                        Campo Grande - <br>
+                        Terenos - <br>
+                        Sidrolândia - <br>
+                        Nova Alvorada do Sul - <br>
+                        </div>
+                    </div>
+                </div>     
+                
+                
+                <div class="container1_3" style="display: flex;">
+                    <div class="grafico" style="text-align:center;align-content:center;height: 100%; width: 60%;">GRAFICO DE POPULAÇÃO</div>
+                    <div class="mapa" style="text-align:center;align-content:center;height: 100%; width: 40%;;">MAPA DE POPULAÇÃO</div>
+                    
+                </div>
+                </div>
 
+            </div>
+
+            <div class="scroll-fade">
+            <div class="container1_4">
+                <div class="texto-medio" style="padding-left: 3%;">POPULAÇÃO POR BACIA HIDROGRÁFICA</div>
+                <div class="grafico_cres_urb" style="width: 100%;height: 100%; align-content: center; text-align: center;background-color: aquamarine;">
+                    ESPAÇO PARA O GRÁFICO DE POPULAÇÃO POR BACIA HIDROGRÁFICA
+                </div>
+            </div>
+            </div>
+
+            
+    </div>
+
+     <!-- CONTAINER PAI 2 -->
+    <div class="container2">
+        <div class="scroll-fade">
+            <div id="galeria" style="margin-top: 3%;"> OCUPAÇÃO E RENDA</div>
+            <div class="caixa-texto-medio">
+                <div class="texto-medio" style="padding-left: 3%;">SETORES COM MAIOR REPRESENTATIVIDADE NA BACIA HIDROGRÁFICA: </div>
+            </div>
+
+                <!-- ATUALIZAR CONFORME OS PERCENTUAIS DE ATVS REPRESENTATIVAS -->
+            <div class="faixa-representativa" style="display: flex; width: 80%;height:auto;justify-content: space-between; align-items: center; margin: 0 auto; padding-bottom: 2%;">
+                <div style="width: 47%;background-color: rgb(24, 24, 24);height: 50px;text-align: center;align-content: center;font-style: italic;"> SERVIÇOS</div>
+                <div style="width: 41%;background-color: rgb(117, 117, 117); height: 50px;text-align: center;align-content: center;font-style: italic"> COMÉRCIO </div>
+                <div style="width: 12%;background-color: rgb(49, 44, 44); height: 50px;text-align: center;align-content: center;font-style: italic">INDÚSTRIA </div>
+
+            </div>
+        </div>
+
+        <div class="scroll-fade">
+        <div class="container2_1">
+            <div class="texto-medio" style="padding-left: 3%;">PERCENTUAL DE EMPREGOS FORMAIS</div>
+            <div class="grafico_emp_formais" style="width: 100%;height: 100%; align-content: center; text-align: center;background-color: aquamarine;">
+                ESPAÇO PARA GRÁFICO DE EMPREGOS FORMAIS
+            </div>
+            </div>        
+        </div>
+
+        <div class="scroll-fade">
+        <div class="container2_2">
+            <div class="texto-medio" style="padding-left: 3%;">PERCENTUAL DE EMPREGOS FORMAIS</div>
+            <div class="grafico_emp_formais" style="width: 100%;height: 100%; align-content: center; text-align: center;background-color: aquamarine;">
+                ESPAÇO PARA GRÁFICO DE EMPREGOS FORMAIS
+
+
+
+        </div>
+        </div>
+
+
+        <!-- fazer o scroll fade -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const elements = document.querySelectorAll(".scroll-fade");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                    // Desativa observação após aparecer (opcional)
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.4, // 10% do elemento visível já ativa
+        });
+
+        elements.forEach((el) => observer.observe(el));
+    });
+    </script>
 
     <footer>
         <div class="container5">

@@ -13,7 +13,7 @@
             margin: 0;
             padding: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #3a595c !important;
+            background-color: #e7e7e7 !important;
             position: relative;
 
             opacity: 0;
@@ -72,17 +72,17 @@
         .container1 {
             display: flex;
             height: 100vh;
-            background-color: #3a595c !important;
+            background-color: #e7e7e7 !important;
         }
     
         .textos {
             width: 65%;
-            background-color: #3a595c;
+            background-color: #e7e7e7; /*3a595c*/
         }
 
         .mapa {
             width: 35%;
-            background-color: #3a595c !important;
+            background-color: #e7e7e7 !important;
             display: 100%;
             
         }        
@@ -100,10 +100,11 @@
             letter-spacing: 6px; /* espaço entre letras*/ 
             padding-left: 10%; /* espaço entre a caixa da div e o texto a esquerda*/
             padding-right: 10%;
+            padding-top: 2%;
             margin-top: 15px;
             margin-bottom: 6px; /* espaço abaixo do título-estudo*/
             text-transform: uppercase; /* maiúsculo */
-            color: white; /* cor da fonte */
+            color: rgb(77, 67, 62); /* cor da fonte */
 
         }
         
@@ -114,21 +115,22 @@
         padding-left: 10%;
         padding-right: 15%;
         margin-top: 15px;
-        color: #C0DCD7 !important;
+        color: hsl(169, 14%, 15%) !important;
         overflow-wrap: break-word; /*quebra de texto em palavras longas*/
         word-wrap: break-word; /* quebra de texto se necessário*/
         white-space: normal; /* permite que o texto quebre*/
+        text-align: justify;
         min-height: 250px;
         }
 
         #rio-info h1, #area-info h1 {
         font-family: 'Nunito', sans-serif;
-        font-size: 30px;
+        font-size: 40px;
         initial-letter: 6px;
         padding-left: 10%;
         padding-right: 15%;
         margin-top: 15px;
-        color: #C0DCD7 !important;
+        color: #0a5a4b !important;
         overflow-wrap: break-word; /*quebra de texto em palavras longas*/
         word-wrap: break-word; /* quebra de texto se necessário*/
         white-space: normal; /* permite que o texto quebre*/
@@ -144,7 +146,7 @@
         padding-left: 10%;
         padding-right: 15%;
         margin-top: 15px;
-        color: #202222;
+        color: hsl(169, 14%, 15%);
         overflow-wrap: break-word; /*quebra de texto em palavras longas*/
         word-wrap: break-word; /* quebra de texto se necessário*/
         white-space: normal; /* permite que o texto quebre*/
@@ -535,7 +537,7 @@
             <div class="mapa3"><iframe id="mapa2" src="03_mapa_pg_conheca_uso.html"></iframe></div>
             <div style="width: 55%; height: auto;"> 
                 
-                <div class="texto-cont6" style="margin-left: 50%;text-align: center;">CLASSES DE USO E OCUPAÇÃO DO SOLO</div>
+                <div class="texto-cont6" style="text-align: center;align-items: center;">CLASSES DE USO E OCUPAÇÃO DO SOLO</div>
                 <div class="container_8" style="display: flex;">
 
                     <div class="inf_uso" style="width: 60%;">
@@ -571,13 +573,26 @@
         <div class="chamar-diag">
             <div class="quadrosocial"> 
                 <a href="pg_conheca/01_index_pg_conheca.html" style="text-decoration: none; color: inherit; display: block;">POPULAÇÃO
-                    </a>
+                </a>
             </div>
 
-            <div class="quadrosocial">OCUPAÇÃO E RENDA</div>
-            <div class="quadrosocial">EDUCAÇÃO</div>
-            <div class="quadrosocial">SAÚDE</div>
-            <div class="quadrosocial">SANEAMENTO</div>
+            <div class="quadrosocial">
+                <a href="pg_conheca/01_index_pg_conheca.html" style="text-decoration: none; color: inherit; display: block;">OCUPAÇÃO E RENDA
+                </a>
+            </div>
+            <div class="quadrosocial">
+               <a href="pg_conheca/01_index_pg_conheca.html" style="text-decoration: none; color: inherit; display: block;">EDUCAÇÃO
+                </a>
+            </div>
+            <div class="quadrosocial">
+                <a href="pg_conheca/01_index_pg_conheca.html" style="text-decoration: none; color: inherit; display: block;">SAÚDE
+                </a>
+            </div>
+
+            <div class="quadrosocial">
+                <a href="pg_conheca/01_index_pg_conheca.html" style="text-decoration: none; color: inherit; display: block;">SANEAMENTO
+                </a>
+            </div>            
 
         </div>
 

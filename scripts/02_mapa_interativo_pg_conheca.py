@@ -245,7 +245,7 @@ def criar_mapa():
     fundo_transparente = folium.Element("""
     <style>
     div.leaflet-container {
-        background: #3a595c !important;
+        background: #e7e7e7 !important;
     }
     </style>
     """)
@@ -274,7 +274,7 @@ def criar_mapa():
 fundo_mapa = folium.Element("""
 <style>
 html, body {
-    width: 100%;height: 100%;margin: 0;padding: 0;background-color: #3a595c !important}
+    width: 100%;height: 100%;margin: 0;padding: 0;background-color: #e7e7e7 !important}
 </style>
 """)
 m = criar_mapa()
