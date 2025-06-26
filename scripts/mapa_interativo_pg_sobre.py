@@ -107,6 +107,24 @@ def criar_mapa():
     </script>
     """)
 
+
+    cursor_remove = folium.Element("""
+    <script>
+        var css = '.leaflet-interactive { cursor: default !important; }';
+        var style = document.createElement('style');
+        style.type = 'text/css';
+        if (style.styleSheet) {
+        style.styleSheet.cssText = css;
+        } else {
+        style.appendChild(document.createTextNode(css));
+        }
+        document.head.appendChild(style);
+    </script>
+    """)
+
+    
+
+
     fundo_transparente = folium.Element("""
     <style>
     div.leaflet-container {
@@ -117,12 +135,20 @@ def criar_mapa():
 
     mapa.get_root().html.add_child(fundo_transparente) #injeção de CSS transparente ao Leaflet do Folium 
     mapa.get_root().html.add_child(travar_arraste_mouse) #injeção de JS do Leaflet do Folium 
+    mapa.get_root().html.add_child(cursor_remove)
     
     return mapa
 
+remover_barra = folium.Element("""
+<style>
+    body {
+        overflow: hidden !important;
+    }
+</style>
+""")
 
 m = criar_mapa()
-
+m.get_root().html.add_child(remover_barra)
 
 caminho_saida = os.path.join(os.path.dirname(__file__), '..', 'mapa.html')
 caminho_saida = os.path.abspath(caminho_saida)

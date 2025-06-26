@@ -122,7 +122,7 @@
         .container0 {
             position: relative;
             width: 100%; 
-            height: 319px;
+            height: 375px;
         }
 
         .texto-banner {
@@ -130,7 +130,7 @@
             letter-spacing: 6px; /* espaço entre letras*/ 
             margin: 10px; /* espaço abaixo do título-estudo*/
             line-height: 60px;
-            top: 50%;
+            top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
             display: flex;
@@ -148,7 +148,7 @@
             font-family: 'League Spartan',sans-serif; /*tipo */
             letter-spacing: 6px; /* espaço entre letras*/ 
             margin: 0px; /* espaço abaixo do título-estudo*/
-            top: 20%;
+            top: 15%;
             left: 50%;
             transform: translate(-50%, -50%);
             display: flex;
@@ -166,7 +166,7 @@
             font-family: 'League Spartan',sans-serif; /*tipo */
             letter-spacing: 6px; /* espaço entre letras*/ 
             margin: 15px; /* espaço abaixo do título-estudo*/
-            top: 80%;
+            top: 65%;
             left: 50%;
             transform: translate(-50%, -50%);
             display: flex;
@@ -211,6 +211,63 @@
         .imagem_rodape a {
             text-decoration: none;
         }
+
+        .fundo_menu_sites{
+            background-color: #3A595C;
+            height: 56px;
+            width: 100%;
+        }
+
+        .barra_fundo_menu_sites {
+            width: 80%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            align-items: center;      
+
+        }
+
+        .itens-menu {
+            font-family: 'League Spartan',sans-serif; /*tipo */
+            font-size: 14px; /*tamanho */
+            letter-spacing: 2px; /* espaço entre letras*/ 
+            margin-bottom: 0px; /* espaço abaixo do título-estudo*/
+            color: #ffffff;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            text-align: center;
+        }
+
+
+        .itens-menu a {
+            text-decoration: none;  /* tira o sublinhado */
+            color: inherit;         /* herda a cor branca do pai */
+            display: block;         /* permite centralizar verticalmente com height 100% */
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .itens-menu a:hover {
+            color: black;
+            cursor: pointer;
+        }
+
+        .itens-menu:first-child {
+           border-left: none; /* remove a borda do primeiro item */
+        }
+
+        .topicos a:hover {
+            color: black;
+            cursor: pointer;
+        }
+
+
+
     </style>
 
 </head>
@@ -222,14 +279,28 @@
         <div class="texto-pequeno">ESTUDOS PARA SUBISIDIAR A REVISÃO DO</div>
         <div class="texto-banner">ENQUADRAMENTO DA BACIA HIDROGRÁFICA DO RIO ANHANDUÍ</div>
         <div class="texto-pequeno2">ATÉ A CONFLUÊNCIA COM O CÓRREGO CACHOEIRA</div>
-        
+      
+    <div id="fundo_menu_sites" class="fundo_menu_sites">
+        <div class="barra_fundo_menu_sites">
+            <div class="itens-menu"><a href="https://enquadramentoanhan.wixsite.com/website">INÍCIO</a></div>
+            <div class="itens-menu"><a href="index.html">ÁREA DE ESTUDO</a></div>
+            <div class="itens-menu"><a href="https://enquadramentoanhan.wixsite.com/website/etapas-do-estudo">ETAPAS DO ESTUDO</a></div>
+            <div class="itens-menu"><a href="https://enquadramentoanhan.wixsite.com/website/equipe-técnica">EQUIPE TÉCNICA</a></div>
+            <div class="itens-menu"><a href="https://enquadramentoanhan.wixsite.com/website/downloads">DOWNLOADS</a></div>
+            <div class="itens-menu"><a href="https://enquadramentoanhan.wixsite.com/website/eventos">EVENTOS</a></div>
+            <div class="itens-menu"><a href="https://enquadramentoanhan.wixsite.com/website/contribuições">CONTRIBUIÇÕES</a></div>
+            <div class="itens-menu"><a href="https://enquadramentoanhan.wixsite.com/website/contact-5">CONTATO</a></div>
+        </div>
+    
+    </div>
+
     </div>
 
     <div class="container1">
 
         <div class="textos">
             <h1 class="titulo-estudo"> ÁREA DE ESTUDO</h1>
-            <p class="texto-explicativo">Apresentamos aqui informações adicionais, curiosidades e mapas ilustrativos para maior contextualização e conhecimento da área da Bacia Hidrográfica do Rio Anhanduí</p>
+            <p class="texto-explicativo">Apresentamos aqui informações adicionais e mapas ilustrativos para maior contextualização e conhecimento da área da Bacia Hidrográfica do Rio Anhanduí</p>
             <br>
             <br>
             <br>

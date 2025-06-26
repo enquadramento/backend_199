@@ -13,7 +13,7 @@
             margin: 0;
             padding: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #e7e7e7 !important;
+            background-color: #ffffff !important;
             position: relative;
 
             opacity: 0;
@@ -21,6 +21,16 @@
             animation: floatIn 1s ease-out forwards;
             
         }
+
+        /* .container_resp {
+            width: 80%;
+            align-content: center;
+            align-self: center;
+            align-items: center;
+            margin: 0 auto;
+            background-color: transparent !important;
+
+        } */
       
         @keyframes floatIn {
             to {
@@ -71,19 +81,20 @@
         
         .container1 {
             display: flex;
-            height: 100vh;
-            background-color: #e7e7e7 !important;
+            height: 85vh;
+            background-color: #ffffff !important;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); 
         }
     
         .textos {
             width: 65%;
-            background-color: #e7e7e7; /*3a595c*/
+            background-color: #ffffff; /*3a595c*/
         }
 
         .mapa {
             width: 35%;
-            background-color: #e7e7e7 !important;
-            display: 100%;
+            background-color: #ffffff !important;
+            height: 100%;
             
         }        
 
@@ -168,17 +179,22 @@
         }
 
         #galeria {
+            box-sizing: border-box; /*resolve a incompatibilidade de padding com a width em 100%, ao contrário, deveria ser 95%*/
             font-family: 'League Spartan',sans-serif; /*tipo */
             font-size:60px; /*tamanho */
             font-weight: bold; /*negrito*/
             letter-spacing: 6px; /* espaço entre letras*/ 
             padding-left: 5%; /* espaço entre a caixa da div e o texto a esquerda*/
-            padding-right: 0%;
-            margin-top: 0px;
+            margin-top: 3%;
+            padding-top: 0%;
             margin-bottom: 20px; /* espaço abaixo do título-estudo*/
             text-transform: uppercase; /* maiúsculo */
             color: white; /* cor da fonte */
             background-color: rgb(71, 81, 77);
+            width: 100%;
+            align-content: center;
+            display: block;
+            height: 75px;
         }
 
         .container4_pt2 {
@@ -265,7 +281,7 @@
         .container0 {
             position: relative;
             width: 100%; 
-            height: 319px;
+            height: 375px;
         }
 
         .texto-banner {
@@ -273,7 +289,7 @@
             letter-spacing: 6px; /* espaço entre letras*/ 
             margin: 10px; /* espaço abaixo do título-estudo*/
             line-height: 60px;
-            top: 50%;
+            top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
             display: flex;
@@ -291,7 +307,7 @@
             font-family: 'League Spartan',sans-serif; /*tipo */
             letter-spacing: 6px; /* espaço entre letras*/ 
             margin: 0px; /* espaço abaixo do título-estudo*/
-            top: 20%;
+            top: 15%;
             left: 50%;
             transform: translate(-50%, -50%);
             display: flex;
@@ -309,7 +325,7 @@
             font-family: 'League Spartan',sans-serif; /*tipo */
             letter-spacing: 6px; /* espaço entre letras*/ 
             margin: 15px; /* espaço abaixo do título-estudo*/
-            top: 80%;
+            top: 65%;
             left: 50%;
             transform: translate(-50%, -50%);
             display: flex;
@@ -398,11 +414,12 @@
 
         .inf_uso {
         font-family: 'Nunito', sans-serif;
-        font-size: 30px;
+        font-size: clamp(1.5rem, 2.5vw, 1.875rem);
         initial-letter: 6px;
         padding-left: 8%;
         padding-right: 3%;
         font-style: italic;
+        white-space: nowrap;
 
         opacity: 0;
         transform: translateY(40px);
@@ -439,11 +456,73 @@
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
         }
         
+        :target::before {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+        }
+
+
+        
+        .fundo_menu_sites{
+            background-color: #3A595C;
+            height: 56px;
+            width: 100%;
+        }
+
+        .barra_fundo_menu_sites {
+            width: 80%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            align-items: center;      
+
+        }
+
+        .itens-menu {
+            font-family: 'League Spartan',sans-serif; /*tipo */
+            font-size: 14px; /*tamanho */
+            letter-spacing: 2px; /* espaço entre letras*/ 
+            margin-bottom: 0px; /* espaço abaixo do título-estudo*/
+            color: #ffffff;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            text-align: center;
+        }
+
+
+        .itens-menu a {
+            text-decoration: none;  /* tira o sublinhado */
+            color: inherit;         /* herda a cor branca do pai */
+            display: block;         /* permite centralizar verticalmente com height 100% */
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .itens-menu a:hover {
+            color: black;
+            cursor: pointer;
+        }
+
+        .itens-menu:first-child {
+           border-left: none; /* remove a borda do primeiro item */
+        }
+                
+
+
     </style>
 </head>
 
 
 <body>
+
 
     <div class="container0">
         <div class="banner" style="background-color: #2b3435;"> <img src="../data/fotos/cabecalho_rodape/DJI_20240712173308_0208_D.JPG" alt="Sem dados"
@@ -451,9 +530,26 @@
         <div class="texto-pequeno">ESTUDOS PARA SUBISIDIAR A REVISÃO DO</div>
         <div class="texto-banner">ENQUADRAMENTO DA BACIA HIDROGRÁFICA DO RIO ANHANDUÍ</div>
         <div class="texto-pequeno2">ATÉ A CONFLUÊNCIA COM O CÓRREGO CACHOEIRA</div>
+     
+    <div id="fundo_menu_sites" class="fundo_menu_sites">
+        <div class="barra_fundo_menu_sites">
+            <div class="itens-menu"><a href="https://enquadramentoanhan.wixsite.com/website">INÍCIO</a></div>
+            <div class="itens-menu"><a href="index.html">ÁREA DE ESTUDO</a></div>
+            <div class="itens-menu"><a href="https://enquadramentoanhan.wixsite.com/website/etapas-do-estudo">ETAPAS DO ESTUDO</a></div>
+            <div class="itens-menu"><a href="https://enquadramentoanhan.wixsite.com/website/equipe-técnica">EQUIPE TÉCNICA</a></div>
+            <div class="itens-menu"><a href="https://enquadramentoanhan.wixsite.com/website/downloads">DOWNLOADS</a></div>
+            <div class="itens-menu"><a href="https://enquadramentoanhan.wixsite.com/website/eventos">EVENTOS</a></div>
+            <div class="itens-menu"><a href="https://enquadramentoanhan.wixsite.com/website/contribuições">CONTRIBUIÇÕES</a></div>
+            <div class="itens-menu"><a href="https://enquadramentoanhan.wixsite.com/website/contact-5">CONTATO</a></div>
+        </div>
+    
+    </div>
+
         
     </div>
 
+    <div class="container_resp">
+        <br><br>
     <div class="container1">
         <div class="mapa">
              <iframe id="mapa1" src="03_mapa_pg_conheca.html"></iframe>
@@ -471,8 +567,10 @@
                 <div style="width: 20%; height: 5px;"></div>
             </div>
             <div id="desc-info">
-                considerando esses processos, a estrutura do geojson atualmente comporta um campo de "DESC",
-                além do campo de "NOME" que gostaria de atualizar uma nova div com o campo DESC assim que fosse clickada. 
+                A bacia hidrográfica do Rio Anhanduí abrange áreas urbanas e rurais de Campo Grande-MS, com usos do solo que variam entre agricultura, pecuária, áreas de 
+                conservação e urbanização acelerada. Destaca-se, em sua cabeceira — trecho urbano —, a presença de cursos d'água canalizados e processos que refletem diferentes
+                pressões antrópicas e padrões de ocupação. Já em seu trecho rural, observam-se usos do solo agropecuários, áreas irrigadas e fragmentação da vegetação nativa, o
+                que evidencia a necessidade de ações integradas para a preservação e recuperação dos recursos hídricos ao longo de toda a bacia.
             </div>
             
             <div class="container3" style="display: flex;">
@@ -496,28 +594,33 @@
 
         </div> 
     </div>
+    </div>
+
+
     <div class="scroll-fade">
     <div class="container4">
         <div class="container4_pt1"></div>
             <div id="galeria"> CONHEÇA ATRAVÉS DE FOTOS</div>
-
+        
+        <div class="container_resp">
         <div class="container4_pt2">  
-            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/Rio Anhanduí/foto 1.JPG', 'Explicação para o Anhnanduí')"> 
+            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/Rio Anhanduí/foto 1.JPG', 'A bacia hidrográfica do Rio Anhanduí tem início na capital sul-mato-grossense, Campo Grande, estendendo-se até os municípios de Sidrolândia e Nova Alvorada do Sul, onde o Rio Anhanduí, pela margem direita, deságua no Rio Pardo, que por sua vez contribui para o Rio Paraná.')"> 
                 <img src="../data/fotos/Rio Anhanduí/foto 1.JPG" alt="Sem dados"></div>
-            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/Rio Anhanduí/foto 2.JPG', 'Explicação para o Anhnanduí')"> 
+            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/Rio Anhanduí/foto 2.JPG', 'O trecho urbano da bacia hidrográfica do Rio Anhanduí abrange parte do perímetro urbano da capital do Estado de Mato Grosso do Sul, concentrando intensas atividades habitacionais, industriais, comerciais e de serviços. Essa área ocupa aproximadamente 315 quilômetros quadrados.')"> 
                 <img src="../data/fotos/Rio Anhanduí/foto 2.JPG" alt="Sem dados"></div>
-            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/Rio Anhanduí/foto 3.JPG', 'Explicação para o Anhnanduí')"> 
+            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/Rio Anhanduí/foto 3.JPG', 'O Rio Anhanduí tem origem na confluência das galerias canalizadas dos córregos Segredo e Prosa, situadas em uma área densamente urbanizada do perímetro urbano de Campo Grande-MS. Em seu trecho urbano, o rio encontra-se parcialmente canalizado e desempenha papel fundamental no escoamento das águas pluviais e na condução do esgoto tratado proveniente da cidade. Devido à sua localização central na malha urbana, o rio é alvo constante de pressões antrópicas, sobretudo nas margens, onde há carência de Áreas de Preservação Permanente (APPs). Essa situação favorece o surgimento de diversos problemas ambientais, como o carreamento de resíduos sólidos e o lançamento clandestino de esgoto por meio da rede de drenagem pluvial.')"> 
                 <img src="../data/fotos/Rio Anhanduí/foto 3.JPG" alt="Sem dados"></div>
         </div>
         <div class="container4_pt2">  
-            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/Rio Anhanduí/foto 4.JPG', 'Explicação para o Anhnanduí')"> 
+            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/Rio Anhanduí/foto 4.JPG', 'O trecho urbano do Rio Anhanduí é composto por seis afluentes principais. Entre eles, destacam-se os córregos Imbirussu e Lageado, com mais de 20 km de extensão cada. Os córregos Segredo, Bandeira, Prosa e o canal identificado como CSD01 também têm relevância, com mais de 5 km de comprimento cada. A intensa urbanização na região se reflete na canalização de cursos d’água, na ocorrência de processos erosivos, no assoreamento, no descarte inadequado de resíduos e na fragmentação da vegetação nativa. A turbidez das águas é uma característica comum em vários pontos. Assim, as diferentes sub-bacias expressam distintos níveis de pressão antrópica e padrões de ocupação, o que exige ações integradas de gestão, conservação e recuperação ambiental para garantir a sustentabilidade e o equilíbrio dos recursos hídricos urbanos.')"> 
                 <img src="../data/fotos/Rio Anhanduí/foto 4.JPG" alt="Sem dados"></div>
-            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/Rio Anhanduí/foto 5.JPG', 'Explicação para o Anhnanduí')"> 
+            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/Rio Anhanduí/foto 5.JPG', 'O trecho rural da bacia hidrográfica do Rio Anhanduí é caracterizado por uma diversidade de usos do solo, com predominância das atividades agrícolas e pecuárias, além da presença localizada de empreendimentos de mineração e sistemas de piscicultura, compondo uma paisagem marcada pela produção intensiva e pelo uso múltiplo dos recursos naturais.')"> 
                 <img src="../data/fotos/Rio Anhanduí/foto 5.JPG" alt="Sem dados"></div>
-            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/Rio Anhanduí/foto 6.JPG', 'Explicação para o Anhnanduí')"> 
+            <div class="galeria-imagem" onclick="abrirPopup('../data/fotos/Rio Anhanduí/foto 6.JPG', 'O trecho final a ter seu enquadramento revisado corresponde à confluência entre o Rio Anhanduí e o Córrego Cachoeira, localizado a aproximadamente 101 quilômetros da nascente, em área de uso do solo predominantemente misto, onde se destacam Áreas de Preservação Permanente que alternam entre trechos bem conservados e segmentos de vegetação fragmentada, com o segmento rural da bacia apresentando um estado de conservação superior ao trecho urbano, ainda que revele manifestações claras de pressões antrópicas provenientes das cabeceiras e do uso intensivo do solo ao longo de seu percurso hídrico')"> 
                 <img src="../data/fotos/Rio Anhanduí/foto 6.JPG" alt="Sem dados"></div> 
         </div>
 
+        </div>
     </div>
 
     <div id="popup" class="popup" onclick="fecharPopup()">
@@ -533,6 +636,7 @@
     </div>
 
     <div class="scroll-fade">
+        <div class="container_resp">
         <div class="container6">        
             <div class="mapa3"><iframe id="mapa2" src="03_mapa_pg_conheca_uso.html"></iframe></div>
             <div style="width: 55%; height: auto;"> 
@@ -564,7 +668,8 @@
 
         <!-- <div class="chamar-diag" style="height: 450px;width: 100%; justify-content: center; gap: 2%;display: flex;"></div> -->
 
-    </div>
+        </div>
+        </div>
     </div>
 
     <div class="scroll-fade">
@@ -572,27 +677,27 @@
 
         <div class="chamar-diag">
             <div class="quadrosocial"> 
-                <a href="pg_conheca/01_index_pg_conheca.html" style="text-decoration: none; color: inherit; display: block;">POPULAÇÃO
+                <a href="../pg_panorama/01_index_pg_panorama.html#container1" style="text-decoration: none; color: inherit; display: block;">POPULAÇÃO
                 </a>
             </div>
 
             <div class="quadrosocial">
-                <a href="pg_conheca/01_index_pg_conheca.html" style="text-decoration: none; color: inherit; display: block;">OCUPAÇÃO E RENDA
+                <a href="../pg_panorama/01_index_pg_panorama.html#container2" style="text-decoration: none; color: inherit; display: block;">OCUPAÇÃO E RENDA
                 </a>
             </div>
             <div class="quadrosocial">
-               <a href="pg_conheca/01_index_pg_conheca.html" style="text-decoration: none; color: inherit; display: block;">EDUCAÇÃO
+               <a href="../pg_panorama/01_index_pg_panorama.html#container3" style="text-decoration: none; color: inherit; display: block;">EDUCAÇÃO
                 </a>
             </div>
             <div class="quadrosocial">
-                <a href="pg_conheca/01_index_pg_conheca.html" style="text-decoration: none; color: inherit; display: block;">SAÚDE
+                <a href="../pg_panorama/01_index_pg_panorama.html#container4" style="text-decoration: none; color: inherit; display: block;">SAÚDE
                 </a>
             </div>
 
-            <div class="quadrosocial">
-                <a href="pg_conheca/01_index_pg_conheca.html" style="text-decoration: none; color: inherit; display: block;">SANEAMENTO
+            <!-- <div class="quadrosocial">
+                <a href="../pg_panorama/01_index_pg_panorama.html#container5" style="text-decoration: none; color: inherit; display: block;">SANEAMENTO
                 </a>
-            </div>            
+            </div>             -->
 
         </div>
 
@@ -766,7 +871,6 @@
     });
     </script>
 
-
     <!-- fazer o scroll fade -->
     <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -781,14 +885,13 @@
                 }
             });
         }, {
-            threshold: 0.4, // 10% do elemento visível já ativa
+            threshold: 0.2, // 10% do elemento visível já ativa
         });
 
         elements.forEach((el) => observer.observe(el));
     });
     </script>
 
-    
 
 
     <footer>

@@ -36,9 +36,9 @@ def subbacias(x):
         show= True,      
         style_function= lambda feature: {
             'fillColor': "#3a595c", #cor de fundo
-            'color': "#FFFFFF", #cor da borda
+            'color': "#9B9999", #cor da borda
             #'dashArray': 5, #tracejamento da borda
-            'weight': 3, #tamanho da borda
+            'weight': 2, #tamanho da borda
             'fillOpacity': 0, #transparencia da cor de fundo e cor de borda
            
         },  
@@ -82,8 +82,8 @@ def hidrografia(x):
 def criar_mapa():
     
     mapa = folium.Map(
-        location=[-20.81130,-54.57809], 
-        zoom_start= 10,  
+        location=[-20.62232,-54.62204], #[-20.81130,-54.57809]
+        zoom_start= 11,  
         control_scale=False,
         zoom_control=False,
         width='100%',  
@@ -112,9 +112,10 @@ def criar_mapa():
             font-style: italic;
             color: rgb(77, 72, 72);
             font-size: 14px;
-            box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
             z-index: 9999;
             opacity: 0.9;">
+            
         <label for="select-bacia"><b>Selecione uma Sub-bacia:</b></label><br>
         <select id="select-bacia">
             <option value="">-- Escolha --</option>
@@ -129,17 +130,26 @@ def criar_mapa():
         var map = maps[0];
         var layersBacias = [];
 
+        var nomesBacias = [];
+
         map.eachLayer(function (layer) {
             if (layer.feature && layer.feature.properties && layer.feature.properties.NOME) {
                 layersBacias.push(layer);
-
-                var nome = layer.feature.properties.NOME;
-                var opt = document.createElement('option');
-                opt.value = nome;
-                opt.textContent = nome;
-                document.getElementById('select-bacia').appendChild(opt);
+                nomesBacias.push(layer.feature.properties.NOME);
             }
         });
+
+        nomesBacias.sort(function(a, b) {
+            return a.localeCompare(b);
+        });
+
+        nomesBacias.forEach(function(nome) {
+            var opt = document.createElement('option');
+            opt.value = nome;
+            opt.textContent = nome;
+            document.getElementById('select-bacia').appendChild(opt);
+        });
+
 
         document.getElementById('select-bacia').addEventListener('change', function () {
             var nomeSelecionado = this.value;
@@ -245,7 +255,7 @@ def criar_mapa():
     fundo_transparente = folium.Element("""
     <style>
     div.leaflet-container {
-        background: #e7e7e7 !important;
+        background: #ffffff !important;
     }
     </style>
     """)
@@ -274,10 +284,21 @@ def criar_mapa():
 fundo_mapa = folium.Element("""
 <style>
 html, body {
-    width: 100%;height: 100%;margin: 0;padding: 0;background-color: #e7e7e7 !important}
+    width: 100%;height: 100%;margin: 0;padding: 0;background-color: #ffffff !important}
 </style>
 """)
+remover_barra = folium.Element("""
+<style>
+    body {
+        overflow: hidden !important;
+    }
+</style>
+""")
+
+
+
 m = criar_mapa()
+m.get_root().html.add_child(remover_barra)
 m.get_root().html.add_child(fundo_mapa)
 
 caminho_saida = os.path.join(os.path.dirname(__file__), '..', 'pg_conheca', '03_mapa_pg_conheca.html')

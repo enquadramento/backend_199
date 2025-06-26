@@ -5,17 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panorama Social</title>
     
+    <!-- DataTables CSS e JS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    
 
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet"> <!-- link da league spartan -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> <!-- link para a nunito-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> <!-- link para icone -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> <!--link para a fonte roboto -->
+
 
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, Helvetica, sans-serif;
-
+            background-color: white;
             position: relative;
+            
+            /* aumentar a responsividade */
+
 
             opacity: 0;
             transform: translateY(40px);
@@ -23,6 +34,15 @@
             
         }
 
+        .container_resp {
+            width: 80%;
+            align-content: center;
+            align-self: center;
+            align-items: center;
+            margin: 0 auto;
+            background-color: transparent;
+
+        }
         @media (max-width: 768px) {
         .menu {
             flex-direction: column;
@@ -112,7 +132,7 @@
         .container0 {
             position: relative;
             width: 100%; 
-            height: 319px;
+            height: 375px;
         }
 
         .texto-banner {
@@ -120,7 +140,7 @@
             letter-spacing: 6px; /* espaço entre letras*/ 
             margin: 10px; /* espaço abaixo do título-estudo*/
             line-height: 60px;
-            top: 50%;
+            top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
             display: flex;
@@ -138,7 +158,7 @@
             font-family: 'League Spartan',sans-serif; /*tipo */
             letter-spacing: 6px; /* espaço entre letras*/ 
             margin: 0px; /* espaço abaixo do título-estudo*/
-            top: 20%;
+            top: 15%;
             left: 50%;
             transform: translate(-50%, -50%);
             display: flex;
@@ -156,7 +176,7 @@
             font-family: 'League Spartan',sans-serif; /*tipo */
             letter-spacing: 6px; /* espaço entre letras*/ 
             margin: 15px; /* espaço abaixo do título-estudo*/
-            top: 80%;
+            top: 65%;
             left: 50%;
             transform: translate(-50%, -50%);
             display: flex;
@@ -171,7 +191,7 @@
                      
         }
 
-        .container5 {
+        .container6 {
             
             position: relative;
             background-color: #CCCCCC;
@@ -218,13 +238,13 @@
         }
 
         #galeria {
+            box-sizing: border-box; /*resolve a incompatibilidade de padding com a width em 100%, ao contrário, deveria ser 95%*/
             font-family: 'League Spartan',sans-serif; /*tipo */
             font-size:60px; /*tamanho */
             font-weight: bold; /*negrito*/
             letter-spacing: 6px; /* espaço entre letras*/ 
             padding-left: 5%; /* espaço entre a caixa da div e o texto a esquerda*/
-            padding-right: 0%;
-            margin-top: 20px;
+            margin-top: 1%;
             padding-top: 1%;
             margin-bottom: 20px; /* espaço abaixo do título-estudo*/
             text-transform: uppercase; /* maiúsculo */
@@ -232,14 +252,15 @@
             background-color: rgb(71, 81, 77);
             width: 100%;
             align-content: center;
+            display: block;
         }
 
-        .container1 {
-            
+        .container1 { 
             height: 100%;
             width: 100%;
-            background-color: rgb(245, 243, 243);
+            background-color: transparent /*rgb(245, 243, 243)*/;
         }
+
 
          .container1_1 {
             display: flex;
@@ -252,6 +273,7 @@
             height: auto;
             justify-content: space-between; /* distribui igualmente */
             align-items: center;
+            margin: 2%;
         }
 
         .texto-medio {
@@ -259,7 +281,7 @@
             font-size:30px; /*tamanho */
             font-weight: bold; /*negrito*/
             letter-spacing: 6px; /* espaço entre letras*/ 
-            padding-left: 10%;   /* espaço entre a caixa da div e o texto a esquerda*/
+            padding-left: 13%;   /* espaço entre a caixa da div e o texto a esquerda*/
             padding-right: 10%;
             margin-top: 15px;
             margin-bottom: 6px; /* espaço abaixo do título-estudo*/
@@ -289,56 +311,439 @@
             
         }
 
+        .caixa-texto-medio3 {
+            width: 100%;
+            display: block;
+            height: 100px;
+            justify-content: space-between; /* distribui igualmente */
+            align-items: center;
+            align-content: center;
+            gap: 2%;
+        }
+
         .texto-medio2 {
             text-align: left;
-            font-family: 'League Spartan',sans-serif; /*tipo */
-            font-size:25px; /*tamanho */
+            font-family: 'Roboto', sans-serif;
+            /*font-family: 'League Spartan',sans-serif; /*tipo */
+            font-size:20px; /*tamanho */
             font-weight: bold; /*negrito*/
-            letter-spacing: 6px; /* espaço entre letras*/ 
+            letter-spacing: 3px; /* espaço entre letras*/ 
             padding-left: 10%; /* espaço entre a caixa da div e o texto a esquerda*/
             padding-right: 10%;
             margin-top: 15px;
             margin-bottom: 6px; /* espaço abaixo do título-estudo*/
-            font-style: italic;
+            font-style:normal;
             line-height: 200%;
             color: rgb(110, 98, 98); /* cor da fonte */            
 
         }
 
+        .texto-medio3 {
+            font-family: 'League Spartan',sans-serif; /*tipo */
+            font-size:30px; /*tamanho */
+            font-weight: bold; /*negrito*/
+            letter-spacing: 6px; /* espaço entre letras*/ 
+            padding-left: 3%;   /* espaço entre a caixa da div e o texto a esquerda*/
+            padding-right: 10%;
+            margin-top: 15px;
+            margin-bottom: 6px; /* espaço abaixo do título-estudo*/
+            text-transform: uppercase; /* maiúsculo */
+            color: rgb(75, 83, 74); /* cor da fonte */            
+
+        }
+
         .container1_3 {
             width: 60%;
-            background-color: aquamarine;
+            background-color: transparent;
         }
 
         .container1_4 {
             width: 100%;
-            height: 400px;
+            height: 710px;
             display: block;
-            margin: 0%;
-
-            
+            margin: 0%;         
         } 
         
         .container2 {
             height: 100%;
             width: 100%;
-            background-color: rgb(245, 243, 243);
+            background-color: transparent /*rgb(245, 243, 243)*/;
         }
 
         .container2_1 {
             width: 100%;
-            height: 400px;
+            height: 630px;
             display: block;
             margin: 0%;
         }
  
-        .container2_1 {
+        .container2_2 {
             width: 100%;
             height: 400px;
             display: block;
             margin: 0%;
         }
+
+        .grafico_pop_geral {
+            
+            align-content:center;
+            height: 100%; 
+            width: 60%;
+        }
+
+        .mapa {
+            text-align:center;
+            align-content:center;
+            height: 100%; 
+            width: 100%;
+        }
         
+        .grafico_cres_urb { 
+            width: 100%;
+            height: 80%; 
+            align-content: center; 
+            text-align: center;
+            background-color: transparent;
+        }
+
+        .grafico_emp_formais {
+            width: 100%;
+            height: 75%; 
+            align-content: center; 
+            text-align: center;
+            /* background-color: aquamarine; */
+        }
+
+        .grafico_rend_amost {
+            width: 100%;
+            height: 100%; 
+            display: block;
+            align-content: center; 
+            text-align: center;
+            /* background-color: aquamarine; */
+        }
+
+        .container2_2_1 {
+            display: flex;
+            height: 75%;
+        }
+
+        .container2_2_1_1 {
+            height: 100%;
+            width: 60%;
+            align-content: center;
+        }
+
+        .container2_2_1_2 {
+            height: 100%;
+            width: 40%;
+            align-content: center;
+            
+        }
+
+        .faixa_representativa {
+            display: flex; 
+            width: 80%;
+            height:auto;
+            justify-content: space-between; 
+            align-items: center; 
+            margin: 0 auto; 
+            padding-bottom: 2%;
+        }
+
+
+        .container3 {
+            height: 100%;
+            width: 100%;
+            background-color: transparent /*rgb(245, 243, 243)*/;
+
+        }
+
+        .grafico_escolaridade_amost {
+            width: 100%;
+            height: 75%; 
+            align-content: center; 
+            text-align: center;
+            /* background-color: aquamarine; */
+
+        }
+
+       .container3_1 {
+            height: 1050px;
+            width: 100%;
+            display: block;
+       }
+
+       .container3_2 {
+            height: 500px;
+            width: 100%;
+            display: block;
+            margin: 0%;
+
+       }
+
+        .mapa2 {
+            text-align:center;
+            align-content:center;
+            height: 50%; 
+            width: 100%;
+            background-color: aquamarine;
+            margin: 0 auto;
+
+        }
+
+        .container3_1_1 {
+            height: 400px !important;
+            display: flex;
+            
+        }
+
+        .inf_educacional {
+            width: 60%;
+            height: 400px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); 
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        .container3_1_2 {
+            width: 40%;
+            height: auto;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); 
+        }
+
+        .grafico_educ {
+            width: 100%;
+            height: 89%;
+            /* background-color: aquamarine; */
+            text-align: center;
+            align-content: center;
+            margin-left: 1%;
+        }
+
+        #tabela_escolas {
+            flex: 1; 
+                    /* ajusta à altura da sua .inf_educacional */
+            table-layout: fixed;
+            overflow-y: auto;         /* rolagem vertical se necessário */
+            overflow-x: hidden;
+            padding: 5px;
+            text-transform: capitalize;
+            
+        }
+
+
+
+        /* corpo da tabela  */
+        #tabela_escolas table {
+            text-transform: capitalize;
+            width: 97% !important;   /* força a tabela a ocupar só o espaço da div */
+            table-layout: fixed;      /* garante colunas proporcionais */
+            word-wrap: break-word;
+            text-align: center;
+            background-color: transparent;
+        }
+
+        /* cabeçalho */
+        #tabela_escolas table th {
+            text-align: center;
+        }
+
+        #tabela_escolas table tr:hover {
+            background-color: #e6f7ff; /* destaque azul claro no hover */
+
+        }
+
+        .container4 {
+            height: 100%;
+            width: 100%;
+            background-color: transparent /*rgb(245, 243, 243)*/;
+
+        }
+
+        .container4_1 {
+            height: 630px;
+            width: 100%;
+            display: block;
+        }
+
+        .container4_2 {
+            height: 1000px;
+            width: 100%;
+            display: block;
+            margin: 0%;
+
+        }
+
+        .container4_3 {
+            height: 200px;
+            width: 100%;
+            display: block;
+            margin: 0%;
+
+        }
+
+        .grafico_inf_saude {
+            width: 100%;
+            height: 80%; 
+            align-content: center; 
+            text-align: center;
+            /* background-color: aquamarine; */
+        }
+
+        .mapa3 {
+            text-align:center;
+            align-content:center;
+            height: 84.5%; 
+            width: 100%;
+            background-color: aquamarine;
+            margin: 0 auto;            
+        }
+
+        .container5 { 
+            height: 100%;
+            width: 100%;
+            background-color: transparent /*rgb(245, 243, 243)*/;
+        }
+
+        .container5_1 {
+            display: flex;
+            height: 660px;
+
+        }
+
+        .container5_1_1 {
+            width: 40%;
+            height: auto;
+            justify-content: space-between; /* distribui igualmente */
+            align-items: center;
+        }
+        
+        .container5_1_2 {
+            width: 60%;
+            background-color: aquamarine;
+        }
+
+        .mapa4 {
+            text-align:center;
+            align-content:center;
+            height: 100%; 
+            width: 100%;
+        }
+
+        .container5_2 {
+            width: 100%;
+            height: 400px;
+            display: block;
+            margin: 0%;         
+        }
+
+        .grafico_pop_atendida_agua {
+            width: 100%;
+            height: 75%; 
+            align-content: center; 
+            text-align: center;
+            background-color: aquamarine;
+        }
+
+        iframe {
+           width: 100%;
+           height: 100%; 
+        }
+
+        .tooltip-container {
+        position: relative;
+        display: inline-block;
+        }
+
+        .tooltip-texto {
+        font-family: 'Courier New', Courier, monospace;
+        color: #2b3435;
+        cursor: pointer;
+        }
+
+        .tooltip-balão {
+        visibility: hidden;
+        width: 220px;
+        background-color: #2b3435;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 6px;
+        position: absolute;
+        right: 0;
+        bottom: 125%;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.3s;
+        }
+
+        .tooltip-texto:hover .tooltip-balão {
+        visibility: visible;
+        opacity: 1;
+        }
+
+        .grafico_rep_setores {
+            width: 100%;
+            height: 230px; 
+            align-content: center; 
+            text-align: center;
+            /* background-color: aquamarine; */
+        }
+
+
+
+        .fundo_menu_sites{
+            background-color: #3A595C;
+            height: 56px;
+            width: 100%;
+        }
+
+        .barra_fundo_menu_sites {
+            width: 80%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            align-items: center;      
+
+        }
+
+        .itens-menu {
+            font-family: 'League Spartan',sans-serif; /*tipo */
+            font-size: 14px; /*tamanho */
+            letter-spacing: 2px; /* espaço entre letras*/ 
+            margin-bottom: 0px; /* espaço abaixo do título-estudo*/
+            color: #ffffff;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            text-align: center;
+        }
+
+
+        .itens-menu a {
+            text-decoration: none;  /* tira o sublinhado */
+            color: inherit;         /* herda a cor branca do pai */
+            display: block;         /* permite centralizar verticalmente com height 100% */
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .itens-menu a:hover {
+            color: black;
+            cursor: pointer;
+        }
+
+        .itens-menu:first-child {
+           border-left: none; /* remove a borda do primeiro item */
+        }
+
+
     </style>
 </head>
 
@@ -351,35 +756,75 @@
         <div class="texto-pequeno">ESTUDOS PARA SUBISIDIAR A REVISÃO DO</div>
         <div class="texto-banner">ENQUADRAMENTO DA BACIA HIDROGRÁFICA DO RIO ANHANDUÍ</div>
         <div class="texto-pequeno2">ATÉ A CONFLUÊNCIA COM O CÓRREGO CACHOEIRA</div>
-        
+
+    <div id="fundo_menu_sites" class="fundo_menu_sites">
+        <div class="barra_fundo_menu_sites">
+            <div class="itens-menu"><a href="https://enquadramentoanhan.wixsite.com/website">INÍCIO</a></div>
+            <div class="itens-menu"><a href="index.html">ÁREA DE ESTUDO</a></div>
+            <div class="itens-menu"><a href="https://enquadramentoanhan.wixsite.com/website/etapas-do-estudo">ETAPAS DO ESTUDO</a></div>
+            <div class="itens-menu"><a href="https://enquadramentoanhan.wixsite.com/website/equipe-técnica">EQUIPE TÉCNICA</a></div>
+            <div class="itens-menu"><a href="https://enquadramentoanhan.wixsite.com/website/downloads">DOWNLOADS</a></div>
+            <div class="itens-menu"><a href="https://enquadramentoanhan.wixsite.com/website/eventos">EVENTOS</a></div>
+            <div class="itens-menu"><a href="https://enquadramentoanhan.wixsite.com/website/contribuições">CONTRIBUIÇÕES</a></div>
+            <div class="itens-menu"><a href="https://enquadramentoanhan.wixsite.com/website/contact-5">CONTATO</a></div>
+        </div>
+    
+    </div>
+    
     </div>
 
+    
     <!-- CONTAINER PAI 1 -->
-    <div class="container1">
+    <div id='container1' class="container1">
             <div class="scroll-fade">
                 <div id="galeria"> DADOS POPULACIONAIS</div>
             </div>
             
+            <div class="container_resp">
             <div class="scroll-fade">
             <div class="container1_1">
                 <div class="container1_2">
                     <div class="caixa-texto-medio">
-                        <div class="texto-medio">População por município: </div>
+                        <div class="texto-medio" style="padding-left: 0%;">População por município: </div>
                     </div>
-                    <div class="caixa-texto-medio2">
-                        <div class="texto-medio2">
-                        Campo Grande - <br>
-                        Terenos - <br>
-                        Sidrolândia - <br>
-                        Nova Alvorada do Sul - <br>
+                    <div class="caixa-texto-medio2" >
+                        <!-- <div id="99" style="color: #2b3435; font-family: 'Courier New', Courier, monospace; text-align: right;width: 90%;">
+                              <span 
+                                style="cursor: help; font-family: 'Courier New', Courier, monospace; color: #2b3435;" 
+                                title="Número de habitantes com base no Censo 2022">
+                                (hab)
+                                </span>(hab)</div> -->
+
+                        <div class="tooltip-container" style="text-align: right; width: 100%;">
+                            <span class="tooltip-texto">
+                                <div style="text-align: right; width: 90%;">
+                                    <i 
+                                        class="fas fa-question-circle" 
+                                        style="cursor: pointer; color: #2b3435; font-size: 18px;" 
+                                        title="Número de habitantes com base no Censo 2022">
+                                    </i>
+                                </div>
+                                <span class="tooltip-balão">Número de habitantes com base no Censo 2022</span>
+                            </span>
+                        </div>
+                        
+                        <div class="texto-medio2" style="text-align: right; text-transform: uppercase; padding-left: 0%; margin-top: 0px;">
+                        Campo Grande - 818.028<br>
+                        Terenos - 7<br>
+                        Sidrolândia - 3.964<br>
+                        Nova Alvorada do Sul - 422<br>
                         </div>
                     </div>
                 </div>     
-                
-                
+   
                 <div class="container1_3" style="display: flex;">
-                    <div class="grafico" style="text-align:center;align-content:center;height: 100%; width: 60%;">GRAFICO DE POPULAÇÃO</div>
-                    <div class="mapa" style="text-align:center;align-content:center;height: 100%; width: 40%;;">MAPA DE POPULAÇÃO</div>
+                    <!-- <div class="grafico_pop_geral">
+                       <iframe src="grafico_pop_geral.html" style="border: none; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        </iframe>
+                    </div>-->
+                    <div class="mapa">
+                        <iframe src="02_mapa_pg_interativo_populacional.html" style="border: none; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe></div> 
+
                     
                 </div>
                 </div>
@@ -387,56 +832,303 @@
             </div>
 
             <div class="scroll-fade">
+               <br><br><br> 
             <div class="container1_4">
-                <div class="texto-medio" style="padding-left: 3%;">POPULAÇÃO POR BACIA HIDROGRÁFICA</div>
-                <div class="grafico_cres_urb" style="width: 100%;height: 100%; align-content: center; text-align: center;background-color: aquamarine;">
-                    ESPAÇO PARA O GRÁFICO DE POPULAÇÃO POR BACIA HIDROGRÁFICA
+                <div class="caixa-texto-medio3">
+                <div class="texto-medio3">POPULAÇÃO POR MICROBACIA HIDROGRÁFICA</div></div>
+                <div class="grafico_cres_urb">
+                        <iframe src="grafico_cres_urb.html" style="border: none; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        </iframe>
                 </div>
+
             </div>
             </div>
 
-            
+        </div>
     </div>
 
      <!-- CONTAINER PAI 2 -->
-    <div class="container2">
-        <div class="scroll-fade">
+    <div id='container2' class="container2">
+                <div class="scroll-fade">
             <div id="galeria" style="margin-top: 3%;"> OCUPAÇÃO E RENDA</div>
-            <div class="caixa-texto-medio">
-                <div class="texto-medio" style="padding-left: 3%;">SETORES COM MAIOR REPRESENTATIVIDADE NA BACIA HIDROGRÁFICA: </div>
+            <div class="container_resp">
+            <div class="caixa-texto-medio" style="height: 100px;">
+                <div class="texto-medio3"> SETORES COM MAIOR REPRESENTATIVIDADE NA BACIA HIDROGRÁFICA: </div>
             </div>
 
                 <!-- ATUALIZAR CONFORME OS PERCENTUAIS DE ATVS REPRESENTATIVAS -->
-            <div class="faixa-representativa" style="display: flex; width: 80%;height:auto;justify-content: space-between; align-items: center; margin: 0 auto; padding-bottom: 2%;">
-                <div style="width: 47%;background-color: rgb(24, 24, 24);height: 50px;text-align: center;align-content: center;font-style: italic;"> SERVIÇOS</div>
-                <div style="width: 41%;background-color: rgb(117, 117, 117); height: 50px;text-align: center;align-content: center;font-style: italic"> COMÉRCIO </div>
-                <div style="width: 12%;background-color: rgb(49, 44, 44); height: 50px;text-align: center;align-content: center;font-style: italic">INDÚSTRIA </div>
-
+            <div class="grafico_rep_setores">
+                        <iframe src="grafico_rep_setores.html" style="border: none; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        </iframe>                
             </div>
-        </div>
-
         <div class="scroll-fade">
         <div class="container2_1">
-            <div class="texto-medio" style="padding-left: 3%;">PERCENTUAL DE EMPREGOS FORMAIS</div>
-            <div class="grafico_emp_formais" style="width: 100%;height: 100%; align-content: center; text-align: center;background-color: aquamarine;">
-                ESPAÇO PARA GRÁFICO DE EMPREGOS FORMAIS
+            <div class="caixa-texto-medio3">
+
+            <div class="texto-medio3" style="display: flex;">
+                  EMPREGOS FORMAIS AMOSTRADOS       
+            </div>
+        
+        
+        </div>
+            <div class="grafico_emp_formais">
+                        <iframe src="grafico_emp_formais.html" style="border: none; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        </iframe> 
             </div>
             </div>        
         </div>
 
         <div class="scroll-fade">
         <div class="container2_2">
-            <div class="texto-medio" style="padding-left: 3%;">PERCENTUAL DE EMPREGOS FORMAIS</div>
-            <div class="grafico_emp_formais" style="width: 100%;height: 100%; align-content: center; text-align: center;background-color: aquamarine;">
-                ESPAÇO PARA GRÁFICO DE EMPREGOS FORMAIS
-
-
-
+            <div class="caixa-texto-medio3">
+                <div class="texto-medio3">RENDIMENTO AMOSTRADO</div></div>
+            <div class="container2_2_1">
+                <div class="container2_2_1_1">
+                    <div class="grafico_rend_amost">
+                        <iframe src="grafico_rend_amost.html" style="border: none; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        </iframe> 
+                         
+                    </div>
+                </div>
+                <div class="container2_2_1_2">
+                    <div class="texto-medio2">
+                        O levantamento das informações sobre renda foi realizado em 2024, por meio da aplicação de questionários à população residente na bacia hidrográfica do Rio Anhanduí.
+                    </div>
+                </div>
+            </div>
         </div>
         </div>
+        </div>
+    </div>
+    </div>
+
+     <!-- CONTAINER PAI 3 -->
+    <div id='container3' class="container3">
+        <div class="scroll-fade">
+            <div id="galeria"; style="margin-top: 3%;">NÍVEL EDUCACIONAL</div>
+        </div>
+
+        <div class="container_resp">
+        <div class="scroll-fade">
+            <div class="container3_1">
+                <div class="caixa-texto-medio3">
+                    <div class="texto-medio3">EQUIPAMENTOS DO SISTEMA EDUCACIONAL NA BACIA HIDROGRÁFICA</div></div>
+                <div class="mapa2">
+                            <iframe src="03_mapa_interativo_escolar.html" style="border: none; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe></div> 
+                    
+                <br>
+                <br>
+                
+                
+                <div class="container3_1_1">
+                    <div class="inf_educacional">
+                        
+                        <div class="texto-medio3" style="font-size: larger; text-align: center;">RELAÇÃO DE CENTROS EDUCACIONAIS:</div>
+                            <div id="tabela_escolas"></div>
+                    </div>
+                    
+                    <div class="container3_1_2">
+                        <div class="texto-medio3" style="font-size: larger; text-align: center;">TIPO DE ADMINISTRAÇÃO:</div>
+                        <div class="grafico_educ">
+                                <iframe src="grafico_educ.html" style="border: none; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                </iframe> 
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-fade">
+            <br><br>
+            <div class="container3_2">
+                <div class="caixa-texto-medio3"> 
+                    <div class="texto-medio3">NÍVEL DE ESCOLARIDADE DA POPULAÇÃO AMOSTRADA</div></div>
+                <div class="grafico_escolaridade_amost">
+                        <iframe src="grafico_escolaridade_amost.html" style="border: none; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        </iframe>                    
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- CONTAINER PAI 4 -->
+    <div id='container4' class="container4">
+        <div class="scroll-fade">
+            <div id="galeria" style="margin-top: 3%;">SAÚDE</div></div>
+        
+        <div class="container_resp">
+        <div class="scroll-fade">
+            <div class="container4_1">
+                <div class="caixa-texto-medio3">
+                    <div class="texto-medio3">EQUIPAMENTOS DO SISTEMA DE SAÚDE PÚBLICA NA BACIA HIDROGRÁFICA</div></div>
+                <div class="mapa3"> 
+                        <iframe src="04_mapa_interativo_saude.html" style="border: none; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe></div> 
+                
 
 
-        <!-- fazer o scroll fade -->
+                </div>
+            </div>
+        
+
+        <div class="scroll-fade">
+            <div class="container4_2">
+                <div class="caixa-texto-medio3">
+                    <div class="texto-medio3">INFRAESTRUTURA DE ATENDIMENTO</div></div>
+                <div class="grafico_inf_saude">
+                                <iframe src="grafico_inf_saude.html" style="border: none; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                </iframe>                    
+                </div>
+            </div>
+        </div>
+        
+        <!-- <div class="scroll-fade">
+            <div class="container4_3">
+                <div class="caixa-texto-medio3">
+                    <div class="texto-medio3">LEITOS HOSPITALARES   </div></div>
+                <div class="faixa_representativa">
+                    
+                    <div style="width: 72%;background-color: rgb(24, 24, 24);height: 50px;text-align: center;align-content: center;font-style: italic;"> SUS</div>
+                    <div style="width: 28%;background-color: rgb(117, 117, 117); height: 50px;text-align: center;align-content: center;font-style: italic"> NÃO SUS </div>
+                </div>
+            </div>
+        </div> -->
+        </div>
+    </div> 
+    
+    <!-- CONTAINER PAI 5 DESATIVADO-->
+     <!-- <div id='container5' class="container5">
+        <div class="scroll-fade">
+            <div id="galeria" style="margin-top: 3%;">SANEAMENTO</div></div>
+
+        <div class="container_resp">
+        <div class="scroll-fade">
+            <div class="container5_1">
+                <div class="container5_1_1">
+                    <div class="caixa-texto-medio">
+                        <div class="texto-medio">ABASTECIMENTO DE ÁGUA</div></div>
+                    <div class="caixa-texto-medio2">
+                        <div class="texto-medio2">
+                        47 % Captação Subterrânea <br>
+                        40% % Captação Superficial do Guariroba <br>
+                        13 % Captação Superficial do Lajeado <br>
+                    </div></div>
+                </div>
+                <div class="container5_1_2">
+                    <div class="mapa4">ESPAÇO PARA O MAPA DE FONTES DE CAPTAÇÃO DE ÁGUAA = POÇOS + CAPTAÇÃO SUPERFICIAL</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-fade">
+            <div class="container5_2">
+                <div class="caixa-texto-medio3">
+                <div class="texto-medio3">POPULAÇÃO ATENDIDA PELA SERVI~ÇO DE ABASTECIMENTO:</div></div>
+                <div class="grafico_pop_atendida_agua">ESPAÇO PARA O GRAFICO DE BARRA HORIZONTAL DE ATENDIMENTO DE ÁGUA</div>
+            </div>
+            </div>
+     </div>
+    </div> -->
+
+    <div id="galeria" style="margin-top: 3%;"> SAIBA MAIS SOBRE A BACIA AQUI</div>
+    
+    <div class="scroll-fade">
+
+        <div class="chamar-mais" style="height: 450px;width: 100%; justify-content: center; gap: 2%;display: flex;">
+            <div id="img1" style="width: 30%;position: relative;">
+            <div class="texto-imgs">PLANO DE TRABALHO</div>
+            <a href="https://enquadramentoanhan.wixsite.com/website/downloads" target="_blank">
+            <img src="../data/fotos/capa_produtos/plano_de_trabalho.avif" alt="diagnóstico" style="width: 100%; height: 400px; object-fit: cover;
+            transition: transform 0.6s ease"> </a>
+            </div>
+
+
+        <div id="img2" style="width: 30%;position: relative"> 
+                <div class="texto-imgs">DIAGNÓSTICO</div>
+            <a href="https://enquadramentoanhan.wixsite.com/website/downloads" target="_blank">
+            <img src="../data/fotos/capa_produtos/diagnostico.avif" alt="prognóstico" style="width: 100%; height: 400px; object-fit: cover;
+            transition: transform 0.6s ease"></a> 
+            </div>  
+
+        <div id="img3" style="width: 30%;position: relative"> 
+                <div class="texto-imgs" >PROGNÓSTICO</div>
+            <a href="https://enquadramentoanhan.wixsite.com/website/downloads" target="_blank">
+            <img src="../data/fotos/capa_produtos/prognostico.avif" alt="prognóstico" style="width: 100%; height: 400px; object-fit: cover;
+        transition: transform 0.6s ease"></a> 
+            </div>  
+        </div>
+
+    </div>
+    
+</div>
+
+
+
+     
+    <!-- ler HTML em CSV -->
+    <script>
+    $(document).ready(function () {
+        $('#tabela_escolas').html(`
+            <table id="tabela_escolas_interna" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Tipo</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        `);
+
+        const tabela = $('#tabela_escolas_interna').DataTable({
+            paging: false,         // remove paginação
+            searching: false,      // remove barra de busca
+            info: false,           // remove "X entries"
+            ordering: true,        // mantém ordenação
+            scrollY: '300px',      // altura visível com scroll (ajustável)
+            scrollCollapse: true, 
+            language: {
+                emptyTable: "Nenhuma escola encontrada"
+            },
+            columns: [
+            { title: "Nome", width: "80%" },
+            { title: "Tipo", width: "20%" }
+            ]
+        });
+
+        fetch('../data/tables/escolas.csv')
+            .then(response => response.text())
+            .then(csv => {
+                const linhas = csv.trim().split('\n');
+                linhas.shift(); // remove cabeçalho
+
+                const dados = [];
+
+
+                linhas.forEach(linha => {
+                    const [nome, tipo] = linha.split(';');
+
+                    if (nome && tipo) {
+                        // Transforma todo o nome para lowercase e depois capitaliza cada palavra
+                        const nomeFormatado = nome
+                            .toLowerCase()
+                            .replace(/\b\w/g, letra => letra.toUpperCase());
+
+                        dados.push([nomeFormatado, tipo]);
+                    }
+                });
+
+
+
+
+                tabela.rows.add(dados).draw(); // ← desenha tudo de uma vez só
+            });
+
+    });
+    </script>
+
+    <!-- fazer o scroll fade -->
     <script>
     document.addEventListener("DOMContentLoaded", function () {
         const elements = document.querySelectorAll(".scroll-fade");
@@ -450,15 +1142,17 @@
                 }
             });
         }, {
-            threshold: 0.4, // 10% do elemento visível já ativa
+            threshold: 0.2, // 10% do elemento visível já ativa
         });
 
         elements.forEach((el) => observer.observe(el));
     });
     </script>
 
+
+    <!-- FIM DA PÁGINA -->
     <footer>
-        <div class="container5">
+        <div class="container6">
             <div class="conteudo-imagens">
                 <div class="imagem_rodape" style="width: 20%;"> 
                     <a href="https://demeterengenharia.com.br/" target="_blank">
