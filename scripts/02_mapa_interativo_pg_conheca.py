@@ -51,11 +51,11 @@ def subbacias(x):
             
         # },
         name='Sub bacias hidrográficas', 
-        tooltip=GeoJsonTooltip(
-            fields=['NOME'], #coluna do popup
-            sticky=True, #se o nome acompanha o mouse, ou centraliza na feição
-            labels=False), #evita o nome da coluna
-        # zoom_on_click=True, 
+        # tooltip=GeoJsonTooltip(
+        #     fields=['NOME'], #coluna do popup
+        #     sticky=True, #se o nome acompanha o mouse, ou centraliza na feição
+        #     labels=False), #evita o nome da coluna
+        # # zoom_on_click=True, 
     ).add_to(x)
 
 def hidrografia(x):
@@ -100,23 +100,38 @@ def criar_mapa():
 
 
     lista_suspensa_bacias = folium.Element("""
+                                           
+    <style>
+    #bacia-dropdown {
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    #bacia-dropdown:hover {
+        box-shadow:
+          0 0 10px 3px rgba(255, 165, 0, 0.8),
+          0 0 20px 6px rgba(255, 140, 0, 0.6);
+        transform: scale(1.05);
+        z-index: 10000;
+    }
+    </style>
+
     <div id="bacia-dropdown" style="
             position: fixed;
-            top: 10px;
+            top: 3px;
             left: 10px;
             background-color: white;
-            padding: 10px;
+            padding: 7px;
             border: 1px solid ;
             border-radius: 5px;
             font-family: Arial, sans-serif;
             font-style: italic;
-            color: rgb(77, 72, 72);
-            font-size: 14px;
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+            font-size: 16px;
             box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
             z-index: 9999;
-            opacity: 0.9;">
+            opacity: 1;">
             
-        <label for="select-bacia"><b>Selecione uma Sub-bacia:</b></label><br>
+        <label for="select-bacia"><b>Selecione uma Sub-bacia para mais informações:</b></label><br>
         <select id="select-bacia">
             <option value="">-- Escolha --</option>
         </select>

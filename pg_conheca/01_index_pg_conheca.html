@@ -434,12 +434,28 @@
         background-color: rgb(54, 61, 68);
         border-radius: 10%;
         color: white;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        /* text-align: center; */
+        /* display: flex; */
+        /* justify-content: center; */
+        /* align-items: center; */
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         cursor: pointer;
+        overflow: hidden;
+        }
+
+
+        .quadrosocial a {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            line-height: normal !important;   /* garante que não tem line-height alterando */
+            padding: 0 !important;            /* remove qualquer padding herdado */
+            margin: 0 !important;
         }
 
         .chamar-diag {
@@ -675,14 +691,15 @@
     </div>
 
     <div class="scroll-fade">
-        <div id="galeria" style="margin-top: 3%;"> DADOS SOCIAIS</div>
+        <div id="galeria" style="margin-top: 3%;"> DADOS SOCIAIS DA BH ANHANDUÍ</div>
 
         <div class="chamar-diag">
-            <div class="quadrosocial"> 
+
+
+             <div class="quadrosocial"> 
                 <a href="../pg_panorama/01_index_pg_panorama.html#container1" style="text-decoration: none; color: inherit; display: block;">POPULAÇÃO
                 </a>
-            </div>
-
+            </div> 
             <div class="quadrosocial">
                 <a href="../pg_panorama/01_index_pg_panorama.html#container2" style="text-decoration: none; color: inherit; display: block;">OCUPAÇÃO E RENDA
                 </a>

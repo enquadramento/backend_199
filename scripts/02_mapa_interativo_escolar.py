@@ -89,7 +89,7 @@ def criar_mapa():
         width='100%',  
         height='880px', 
         tiles = None, 
-        scrollWheelZoom=True, 
+        scrollWheelZoom=False, 
         attributionControl=False,
     )
 
@@ -145,7 +145,6 @@ remover_barra = folium.Element("""
 fonte_awesome = folium.Element("""
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 """)
-
 
 m = criar_mapa()
 m.get_root().html.add_child(remover_barra)

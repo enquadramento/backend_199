@@ -74,7 +74,7 @@ def criar_mapa():
         width='100%',  
         height='880px', 
         tiles = None, 
-        scrollWheelZoom=True, 
+        scrollWheelZoom=False, 
         attributionControl=False,
     )
     

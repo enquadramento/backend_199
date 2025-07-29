@@ -51,21 +51,21 @@ def subbacias(x):
         },
 
         #a função highlight function é para dar estilo ao destacamento da feição após passar o mouse
-        highlight_function = lambda feature: {
-            'fillColor': "red", 
-            'color': "red", 
-            #'oppacity':0.3, também pode ser subastituído por fillOpacity
-            'dashArray': 5, 
-            'fillOpacity': 0.3,
-            'stroke': False,
-        },
-        name='Sub bacias hidrográficas',
+        # highlight_function = lambda feature: {
+        #     'fillColor': "red", 
+        #     'color': "red", 
+        #     #'oppacity':0.3, também pode ser subastituído por fillOpacity
+        #     'dashArray': 5, 
+        #     'fillOpacity': 0.3,
+        #     'stroke': False,
+        # },
+        # name='Sub bacias hidrográficas',
      
         # junto a highlight function, irá aparecer o nome da feição ao passar o mouse
-        tooltip=GeoJsonTooltip(
-            fields=['NOME'], #coluna do popup
-            sticky=True, #se o nome acompanha o mouse, ou centraliza na feição
-            labels=False) #evita o nome da coluna
+        # tooltip=GeoJsonTooltip(
+        #     fields=['NOME'], #coluna do popup
+        #     sticky=True, #se o nome acompanha o mouse, ou centraliza na feição
+        #     labels=False) #evita o nome da coluna
     ).add_to(x)
 
 
@@ -87,8 +87,9 @@ def criar_mapa():
         attributionControl=False,
     )
 
-    hidrografia(mapa)
     subbacias(mapa)
+    hidrografia(mapa)
+    
 
     # mapa_id = mapa.get_name()
 
